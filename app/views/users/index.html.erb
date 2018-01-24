@@ -18,9 +18,9 @@
         <td><%= user.email %></td>
         <!-- <td><%= user.crypted_password %></td> -->
         <!-- <td><%= user.salt %></td> -->
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
+        <td><%= link_to '詳細', user %></td>
+        <td><%= link_to '編集', edit_user_path(user) %></td>
+        <td><%= link_to 'ユーザー消去', user, method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '新規登録', new_user_path %>
+<%= link_to '質問項目登録', new_question_path, class: 'get' %>
+
