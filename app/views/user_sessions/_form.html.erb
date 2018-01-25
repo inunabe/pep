@@ -1,9 +1,9 @@
 <%= form_tag user_sessions_path, method: :post do %>
-  <div class="field">
+  <div class="input-field col s12">
     <%= label_tag :メールアドレス %><br />
     <%= text_field_tag :email %>
   </div>
-  <div class="field">
+  <div class="input-field col s12">
     <%= label_tag :パスワード %><br />
     <%= password_field_tag :password %>
   </div>

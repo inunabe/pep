@@ -1,9 +1,9 @@
-
-<h1>質問項目登録画面</h1>
+<div class="container">
+<h3>質問項目登録画面</h3>
 <%= form_for (@question) do |f| %>
-    <div class="field">
+    <div class="">
       <%= f.label :質問項目 %><br>
-      <%= f.text_area :text, placeholder: '質問項目を入力' %>
+        <%= f.text_area :text, placeholder: '質問項目を入力' %>
     </div>
 
     <div class="actions">
@@ -11,3 +11,4 @@
     </div>
 <%= link_to 'トップへ戻る', root_path %>
 <% end %>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+<div class="contents row">
+ <table class="striped">
+  <!-- 表の頭の部分 -->
+  <thead >
+    <tr>
+      <td><center>id</center></td></td><td><center>質問項目</center></td>
+    </tr>
+  </thead>
+
+
+  <!-- 表の中身 -->
+  <tbody>
+  <%= @questions.each do |question|%>
+  <tr>
+      <td><%= question.id %></td><td><%= question.text %></td>
+  </tr>
+
+  <% end %>
+
+  </tbody>
+</table>
+</div>
+</div>
+
+<%= link_to 'トップへ戻る', root_path %>
+

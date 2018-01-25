@@ -8,6 +8,10 @@ class QuestionsController < ApplicationController
     redirect_to action: :new
   end
 
+  def index
+    @questions = Question.all
+  end
+
   private
   def question_params
     params.require(:question).permit(:text)

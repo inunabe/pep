@@ -1,0 +1,2 @@
+class MatelpageController < ApplicationController
+end

@@ -15,33 +15,44 @@
 
 
 <body>
-    <div id="nav">
-        <% if current_user %>
-        <!-- ユーザーがログイン状態だったら？ -->
-<!--           <%= link_to "Edit Profile", edit_user_path(current_user.id) %> -->
+    <nav>
+      <div class="nav-wrapper">
+        <!-- <div id="nav"> -->
+          <a href="<%= root_path %>" class="brand-logo">福栄肥料株式会社</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            <% if current_user %>
+            <!-- ユーザーがログイン状態だったら？ -->
+             <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
 
 
-          <%= link_to "ログアウト", :logout , method: :destroy %>
+              <li><%= link_to "ログアウト", :logout , method: :destroy %></li>
 
 
-        <% else %>
+            <% else %>
 
 
-          <%= link_to "新規登録", new_user_path %>
+              <li><%= link_to "新規登録", new_user_path %></li>
 
 
-          <%= link_to "ログイン", :login %>
+              <li><%= link_to "ログイン", :login %></li>
+
+            <% end %>
+            </ul>
 
 
-        <% end %>
+        </div>
+    </nav>
 
-    </div>
       <div>
         <p id="notice"><%= flash[:notice] %></p>
         <p id="alert"><%= flash[:alert] %></p>
       </div>
 
-  <%= yield %>
+
+
+        <%= yield %>
+
 
 </body>
 </html>
