@@ -7,52 +7,34 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>pep.test</title>
 
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<!-- mediaオプション（関連ファイルの出力メディアのリンクタイプ）をallで指定 -->
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <!-- mediaオプション（関連ファイルの出力メディアのリンクタイプ）をallで指定 -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
 
 <body>
+  <header>
     <nav>
       <div class="nav-wrapper">
-        <!-- <div id="nav"> -->
-          <a href="<%= root_path %>" class="brand-logo">福栄肥料株式会社</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-
+          <a href="<%= root_path %>" class="brand-logo">Fukuei</a>
+          <ul id="nav-mobile" class="right ">
             <% if current_user %>
             <!-- ユーザーがログイン状態だったら？ -->
-             <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
-
-
-              <li><%= link_to "ログアウト", :logout , method: :destroy %></li>
-
-
+              <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "ログアウト", :logout , method: :post %></li>
             <% else %>
-
-
               <li><%= link_to "新規登録", new_user_path %></li>
-
-
               <li><%= link_to "ログイン", :login %></li>
-
             <% end %>
-            </ul>
-
-
-        </div>
-    </nav>
-
-      <div>
-        <p id="notice"><%= flash[:notice] %></p>
-        <p id="alert"><%= flash[:alert] %></p>
+          </ul>
       </div>
-
-
+    </nav>
+  </header>
 
         <%= yield %>
-
 
 </body>
 </html>

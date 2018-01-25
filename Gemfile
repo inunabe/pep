@@ -46,5 +46,6 @@ group :development do
   gem 'pry-rails'
   gem 'sorcery'
   gem 'materialize-sass'
+  gem 'material_icons'
 end
 

@@ -1,3 +1,12 @@
-// Place all the styles related to the user_sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-login {
+  background-color: $primary-color;
+  font-size: 15px;
+  width: 200px;
+  color: none;
+
+    &:hover{
+    background-color: $primary-color;
+    opacity: 0.8;
+   }
+}
+

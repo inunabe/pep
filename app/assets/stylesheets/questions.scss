@@ -1,3 +1,16 @@
-// Place all the styles related to the questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.input-field textarea.materialize-textarea {
+  padding: 0;
+}
+
+.btn-question {
+  background-color: $primary-color;
+  font-size: 15px;
+  width: 200px;
+  color: none;
+  text-transform: none;
+
+  &:hover{
+    background-color: $primary-color;
+    opacity: 0.8;
+   }
+}

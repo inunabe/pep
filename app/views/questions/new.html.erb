@@ -1,14 +1,29 @@
 <div class="container">
 <h3>質問項目登録画面</h3>
-<%= form_for (@question) do |f| %>
-    <div class="">
-      <%= f.label :質問項目 %><br>
-        <%= f.text_area :text, placeholder: '質問項目を入力' %>
+<%= form_for (@question) ,class: "col s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
+        <%= f.label :質問項目 %><br>
+      </div>
     </div>
 
     <div class="actions">
-      <%= f.submit "登録する" %>
+      <%= f.submit "登録する" ,class: "btn btn-question" %>
     </div>
 <%= link_to 'トップへ戻る', root_path %>
 <% end %>
 </div>
+
+<!--
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+      </div>
+    </form>
+  </div>
+ -->
