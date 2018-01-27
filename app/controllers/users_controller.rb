@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:index, :new, :create]
+  skip_before_action :require_login, only: [:index, :create]
   before_action :set_user, only: [:show, :edit, :update,]
 
   # GET /users
@@ -29,7 +29,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'ユーザー作成に成功しました' }
+        login(user_params[:email], user_params[:password])
+        format.html { redirect_to users_path, notice: 'ユーザー作成しました' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

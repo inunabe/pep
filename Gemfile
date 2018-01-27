@@ -47,5 +47,6 @@ group :development do
   gem 'sorcery'
   gem 'materialize-sass'
   gem 'material_icons'
+  gem 'rails-i18n'
 end
 

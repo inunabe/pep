@@ -1,7 +1,12 @@
-<div class="container">
-  <h3>新規登録</h3>
-
+  <h3>ユーザー登録</h3>
   <%= render 'form' %>
 
-  <%= link_to '戻る', users_path %>
-</div>
+
+  <div class="bottom-link">
+    <div class="row">
+        <!-- 戻るボタン -->
+     <%= link_to 'arrow_back', users_path, :class => "large material-icons" %>
+    </div>
+
+ <!--<%= link_to '戻る', users_path , :class => "back-icon" %>-->
+

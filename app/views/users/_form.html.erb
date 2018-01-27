@@ -1,38 +1,48 @@
-<%= form_for(@user) do |f| %>
+<%= form_for (@user) ,class: "col s12" do |f| %>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+       <h4><%= @user.errors.size %> 件のエラーがあります</h4>
 
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each  do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="input-field col s12">
-    <%= f.label :メールアドレス %><br>
-    <%= f.text_field :email %>
+<!-- ここからフォーム -->
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :メールアドレス %><br>
+      <%= f.text_field :email, id: "email", class: "register-form"%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :パスワード %><br>
+      <%= f.password_field :password, id: "password", class: "register-form"%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :パスワード（確認）%><br>
+      <%= f.password_field :password_confirmation, id: "password", class: "register-form" %>
+    </div>
   </div>
 
-  <div class="input-field col s12">
-    <%= f.label :パスワード %><br>
-    <%= f.password_field :password %>
+  <!-- チェックボックス -->
+  <div class="row">
+    <div class="input-field col s12">
+    <%= f.label :上長 %><br>
+   <%= f.select :role, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "選択してください", class: "register-form" %>
+    </div>
   </div>
-
-  <div class="input-field col s12">
-    <%= f.label :パスワード（確認）%><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
- <!--  <div class="field">
-    <%= f.label :salt %><br>
-    <%= f.text_field :salt %>
-  </div> -->
+  <!-- ここまで -->
   <div class="actions">
     <%= f.submit '登録', class: 'btn btn-register' %>
   </div>
+
 
 <% end %>

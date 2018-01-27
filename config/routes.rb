@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root  'users#index'
-  # root  'user_sessions#new'
   resources :users
   resources :user_sessions
 

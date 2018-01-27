@@ -1,5 +1,5 @@
 .input-field textarea.materialize-textarea {
-  padding: 0;
+
 }
 
 .btn-question {
@@ -13,4 +13,10 @@
     background-color: $primary-color;
     opacity: 0.8;
    }
+}
+
+.striped thead tr td {
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
 }

@@ -19,14 +19,14 @@
   <header>
     <nav>
       <div class="nav-wrapper">
-          <a href="<%= root_path %>" class="brand-logo">Fukuei</a>
-          <ul id="nav-mobile" class="right ">
+          <a href="<%= users_path %>" class="brand-logo">Fukuei</a>
+          <ul id="nav-mobile" class="right">
             <% if current_user %>
             <!-- ユーザーがログイン状態だったら？ -->
+              <li><%= link_to "ユーザー登録", new_user_path %></li>
               <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
               <li><%= link_to "ログアウト", :logout , method: :post %></li>
             <% else %>
-              <li><%= link_to "新規登録", new_user_path %></li>
               <li><%= link_to "ログイン", :login %></li>
             <% end %>
           </ul>
@@ -34,7 +34,21 @@
     </nav>
   </header>
 
-        <%= yield %>
+<div class="container">
+  <!-- <div class="flash-message">
+    <p class="notice"><%= flash[:notice] %></p>
+    <p class="alert"><%= flash[:alert] %></p>
+  </div> -->
+
+
+  <% if notice %>
+    <p id="notice"><%= flash[:notice]%></p>
+  <% elsif alert %>
+    <p id="alert"><%= flash[:alert]%></p>
+  <% end %>
+
+  <%= yield %>
+</div>
 
 </body>
 </html>

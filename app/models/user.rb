@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates :email, uniqueness: true
 
+  enum role: {
+    nomal: 0
+    manager: 1
+    admin: 2
+  }
+
 end
