@@ -38,19 +38,20 @@
     </div>
   </div>
   <div class="row">
-  <!-- チェックボックス(role設定) -->
+  <!-- チェックボックス(role登録) -->
     <div class="input-field col s6">
-        <%= f.label :区分 %><br>
-        <%= f.select :role, [["一般", "normal"], ["課長・次長", "ruby_base"],["部長","executive"],["管理者","admin"]],  :prompt => "区分を選択してください", class: "register-form" %>
+      <%= f.label :区分 %><br>
+      <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"}, class: "register-form" %>
     </div>
   <!-- チェックボックス(上長登録) -->
     <div class="input-field col s6">
       <%= f.label :上長 %><br>
-      <%= f.select :superior_id, [["上司の名前", "上司のid"], ["上司の名前", "上司のid"]],  :prompt => "上長を選択してください", class: "register-form" %><br>
+      <%= f.select :superior_id, @superiors.map{|t| [t.name, t.id]} , :prompt => "上長を選択してください" , class: "register-form" %>
     </div>
-  </div>
   <!-- ここまで -->
-  <div class="actions">
+  </div>
+
+  <div class="register">
     <%= f.submit '登録', class: 'btn btn-register' %>
   </div>
 

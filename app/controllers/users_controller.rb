@@ -15,18 +15,28 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    users = User.all
+    managers = users.manager
+    executives = users.executive
+    managers.push(executives)
+    # flettenメソッドで配列in配列状態を融合させてあげている
+    @superiors = managers.flatten
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    @users = User.all
+    managers = @users.manager
+    executives = @users.executive
+    managers.push(executives)
+    @superiors = managers.flatten
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         login(user_params[:email], user_params[:password])
@@ -44,7 +54,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_path(@user), notice: 'ユーザー情報を編集しました' }
+        format.html { redirect_to root_path, notice: 'ユーザー情報を編集しました' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -73,6 +83,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # paramsハッシュ構造が二重になっている（paramsというハッシュの中にuserというバリューがあって、user自身もバリューを持っているparams=>{user=>{:email,:password,:name}}）
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation,:name)
+      params.require(:user).permit(:email, :password, :password_confirmation, :name, :role, :superior_id)
     end
 end

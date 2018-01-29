@@ -4,27 +4,7 @@ $primary-color: color("green", "lighten-1") !default;
 
 @import '*';
 
-// フォン指定
+// フォント指定
 body {
   font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif !important;
-}
-
-//もどるとかのリンク
-.bottom-link .row a {
-  color: $primary-color;
-  margin: 5px 10px;
-  opacity: 1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  font-size: 40px;
-  tiny: 1rem;
-  small: 2rem;
-  medium: 4rem;
-  large: 6rem;
-  &:hover {
-    opacity: 0.5;
-  }
 }
