@@ -4,6 +4,7 @@ class UserSessionsController < ApplicationController
   # ログインしないとdestroyできない
   def index
     redirect_to "/"
+
   end
   def new
     @user = User.new

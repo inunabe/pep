@@ -6,6 +6,7 @@
   <table class="striped">
     <thead>
       <tr>
+        <th>氏名</th>
         <th>メールアドレス</th>
         <!-- <th>password</th> -->
        <!--  <th>Salt</th> -->
@@ -16,6 +17,7 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
+          <td><%= user.name %></td>
           <td><%= user.email %></td>
           <!-- <td><%= user.crypted_password %></td> -->
           <!-- <td><%= user.salt %></td> -->

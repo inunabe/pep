@@ -31,12 +31,22 @@
       <%= f.password_field :password_confirmation, id: "password", class: "register-form" %>
     </div>
   </div>
-
-  <!-- チェックボックス -->
   <div class="row">
     <div class="input-field col s12">
-    <%= f.label :上長 %><br>
-   <%= f.select :role, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "選択してください", class: "register-form" %>
+      <%= f.label :氏名 %><br>
+      <%= f.text_field :name, id: "name", class: "register-form", :placeholder => "苗字と名前の間にスペースを入れてください"%>
+    </div>
+  </div>
+  <div class="row">
+  <!-- チェックボックス(role設定) -->
+    <div class="input-field col s6">
+        <%= f.label :区分 %><br>
+        <%= f.select :role, [["一般", "normal"], ["課長・次長", "ruby_base"],["部長","executive"],["管理者","admin"]],  :prompt => "区分を選択してください", class: "register-form" %>
+    </div>
+  <!-- チェックボックス(上長登録) -->
+    <div class="input-field col s6">
+      <%= f.label :上長 %><br>
+      <%= f.select :superior_id, [["上司の名前", "上司のid"], ["上司の名前", "上司のid"]],  :prompt => "上長を選択してください", class: "register-form" %><br>
     </div>
   </div>
   <!-- ここまで -->

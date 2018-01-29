@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:index, :create]
+  skip_before_action :require_login, only: [:index,:new,:create]
   before_action :set_user, only: [:show, :edit, :update,]
 
   # GET /users
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'ユーザー情報を編集しました' }
+        format.html { redirect_to user_path(@user), notice: 'ユーザー情報を編集しました' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -71,7 +71,8 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # paramsハッシュ構造が二重になっている（paramsというハッシュの中にuserというバリューがあって、user自身もバリューを持っているparams=>{user=>{:email,:password,:name}}）
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation,:name)
     end
 end
