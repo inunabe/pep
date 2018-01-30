@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   def show
   end
 
+# 部下一覧を表示させる
+  def subordinate_index
+    @subordinates = current_user.subordinate_users
+  end
+
   # GET /users/new
   def new
     users = User.all

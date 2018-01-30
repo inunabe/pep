@@ -20,14 +20,32 @@
       <div class="nav-wrapper">
           <a href="<%= users_path %>" class="brand-logo">Fukuei</a>
           <ul id="nav-mobile" class="right">
-            <% if current_user %>
-            <!-- ユーザーがログイン状態だったら？ -->
+            <% if current_user && current_user.executive? %>
+              <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
+              <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "ログアウト", :logout , method: :post %></li>
+
+            <% elsif current_user && current_user.manager? %>
+
+              <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
+              <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "ログアウト", :logout , method: :post %></li>
+
+            <% elsif current_user && current_user.admin? %>
+
               <li><%= link_to "ユーザー登録", new_user_path %></li>
               <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
               <li><%= link_to "ログアウト", :logout , method: :post %></li>
+
+            <% elsif current_user && current_user.nomal?%>
+            <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "ログアウト", :logout , method: :post %></li>
+
             <% else %>
               <li><%= link_to "ログイン", :login %></li>
+
             <% end %>
+
           </ul>
       </div>
     </nav>
