@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :user_sessions
-
+  resources :questions
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
-  resources :questions
 
 end

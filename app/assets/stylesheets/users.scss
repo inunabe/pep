@@ -3,29 +3,13 @@
   color:#e57373;
 }
 
-// 登録ボタンのブロック
-.register {
-  margin-top: 150px;
-}
 // 登録ボタン
-.btn-register {
+.actions .register .btn-register {
   background-color: $primary-color;
-  text-transform: none;
-  font-size: 15px;
+  font-size: 17px;
   width: 200px;
+  margin: 100px;
 
-  &:hover {
-    background-color: $primary-color;
-    opacity: 0.8;
-  }
-}
-// ユーザー一覧から飛ぶメニューボタン
-.btn-menu {
-  background-color: $primary-color;
-  margin: 10px 10px;
-  & a{
-  color: #fff;
-  }
   &:hover {
     background-color: $primary-color;
     opacity: 0.8;
@@ -33,12 +17,12 @@
 }
 
 // 各ページタイトル
-h3 {
-  font-size: xx-large;
+.page-title h3{
+  font-size: 200%;
   color: $primary-color;
 }
 
-// ユーザー一覧画面
+// ユーザー一覧画面,質問項目一覧
 .striped tbody tr td a{
   color: $primary-color;
   opacity: 1;

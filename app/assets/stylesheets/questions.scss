@@ -2,9 +2,9 @@
 
 }
 
-.btn-question {
+.actions .btn-question {
   background-color: $primary-color;
-  font-size: 15px;
+  font-size: 17px;
   width: 200px;
   color: none;
   text-transform: none;
@@ -13,10 +13,4 @@
     background-color: $primary-color;
     opacity: 0.8;
    }
-}
-
-.striped thead tr td {
-  font-weight: bold;
-  text-align: left;
-  font-size: 20px;
 }

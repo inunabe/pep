@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+
   def new
     @question = Question.new
   end
@@ -10,6 +11,22 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    @question.update(question_params)
+    redirect_to questions_path, notice: "質問項目を編集しました"
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to questions_path, notice: "質問項目を消去しました"
   end
 
   private

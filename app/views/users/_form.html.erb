@@ -34,26 +34,27 @@
   <div class="row">
     <div class="input-field col s12">
       <%= f.label :氏名 %><br>
-      <%= f.text_field :name, id: "name", class: "register-form", :placeholder => "苗字と名前の間にスペースを入れてください"%>
+      <%= f.text_field :name, id: "name", class: "register-form"%>
     </div>
   </div>
   <div class="row">
   <!-- チェックボックス(role登録) -->
     <div class="input-field col s6">
       <%= f.label :区分 %><br>
-      <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"}, class: "register-form" %>
+      <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"} %>
     </div>
   <!-- チェックボックス(上長登録) -->
     <div class="input-field col s6">
       <%= f.label :上長 %><br>
-      <%= f.select :superior_id, @superiors.map{|t| [t.name, t.id]} , :prompt => "上長を選択してください" , class: "register-form" %>
+      <%= f.select :superior_id, @superiors.map{|t| [t.name, t.id]} , :prompt => "上長を選択してください" %>
     </div>
   <!-- ここまで -->
   </div>
-
-  <div class="register">
-    <%= f.submit '登録', class: 'btn btn-register' %>
+  <div class="actions">
+    <div class="register right-align">
+      <%= f.submit '登録', :class=>"btn btn-large btn-register" %>
+    </div>
   </div>
 
-
 <% end %>
+

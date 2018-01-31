@@ -10,60 +10,65 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+       <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
 
 <body>
   <header>
-    <nav>
-      <div class="nav-wrapper">
-          <a href="<%= users_path %>" class="brand-logo">Fukuei</a>
-          <ul id="nav-mobile" class="right">
+          <ul id="dropdown1" class="dropdown-content">
             <% if current_user && current_user.executive? %>
               <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-              <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
-              <li><%= link_to "ログアウト", :logout , method: :post %></li>
+              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
 
             <% elsif current_user && current_user.manager? %>
 
               <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-              <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
-              <li><%= link_to "ログアウト", :logout , method: :post %></li>
+              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
 
             <% elsif current_user && current_user.admin? %>
 
               <li><%= link_to "ユーザー登録", new_user_path %></li>
-              <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
-              <li><%= link_to "ログアウト", :logout , method: :post %></li>
+              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "質問項目登録", new_question_path %></li>
+              <li><%= link_to "質問項目一覧", questions_path %></li>
 
             <% elsif current_user && current_user.nomal?%>
-            <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
-              <li><%= link_to "ログアウト", :logout , method: :post %></li>
-
+            <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
             <% else %>
-              <li><%= link_to "ログイン", :login %></li>
-
+            <li><%= link_to "ログインしてください", "#!" %></li>
             <% end %>
 
           </ul>
+    <nav>
+      <div class="nav-wrapper">
+          <a href="<%= users_path %>" class="brand-logo">Fukuei</a>
+          <ul class="right ">
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
+          <% if current_user %>
+            <li><%= link_to "ログアウト", :logout , method: :post %></li>
+          <% else %>
+            <li><%= link_to "ログイン", :login , method: :get %></li>
+          <% end %>
+          </ul>
       </div>
     </nav>
+
+
   </header>
 
-<div class="container">
-  <!-- <div class="flash-message">
-    <p class="notice"><%= flash[:notice] %></p>
-    <p class="alert"><%= flash[:alert] %></p>
-  </div> -->
-
-
+<div class="container browser-default">
   <% if notice %>
     <p id="notice"><%= flash[:notice]%></p>
   <% elsif alert %>
     <p id="alert"><%= flash[:alert]%></p>
   <% end %>
-
   <%= yield %>
 </div>
 

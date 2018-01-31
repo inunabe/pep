@@ -1,8 +1,8 @@
-  <div class="page-title row">
+  <div class="page-title">
     <h3>質問項目一覧</h3>
   </div>
-  <div class="contents row">
-    <table class="striped">
+  <div class="contents row questions-table ">
+    <table class="striped ">
     <!-- 表の頭の部分 -->
       <thead >
         <tr>
@@ -16,18 +16,11 @@
         <% @questions.each do |question|%>
         <tr>
         <td><%= question.id %></td><td><%= question.text %></td>
+        <td><%= link_to "編集", edit_question_path(question) %>
+        <td><%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
+        </td>
         </tr>
-
         <% end %>
-
       </tbody>
     </table>
   </div>
-  <div class="bottom-link">
-    <div class="row">
-      <%= link_to 'arrow_back', users_path, :class => "large material-icons" %>
-      <!--<%= link_to '戻る', root_path %>-->
-    </div>
-  </div>
-
-

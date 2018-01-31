@@ -3,3 +3,10 @@ nav .nav-wrapper .brand-logo{
   padding-left: 10px;
 }
 
+body header nav .nav-wrapper {
+  background-color: $primary-color;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: $primary-color !important;
+}

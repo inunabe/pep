@@ -1,0 +1,12 @@
+<%= form_for (@question) ,class: "col s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
+        <%= f.label :質問項目 %><br>
+      </div>
+    </div>
+
+    <div class="actions right-align">
+      <%= f.submit "登録" ,:class=>"btn btn-large btn-question" %>
+    </div>
+<% end %>
