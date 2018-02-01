@@ -10,3 +10,8 @@ body header nav .nav-wrapper {
 .dropdown-content li > a, .dropdown-content li > span {
   color: $primary-color !important;
 }
+
+nav .nav-wrapper .left-logo {
+  left: 2%;
+  transform: none;
+}

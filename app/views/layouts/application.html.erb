@@ -42,13 +42,13 @@
             <% elsif current_user && current_user.nomal?%>
             <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
             <% else %>
-            <li><%= link_to "ログインしてください", "#!" %></li>
+            <li><%= link_to "ユーザー登録", new_user_path %></li>
             <% end %>
 
           </ul>
     <nav>
-      <div class="nav-wrapper">
-          <a href="<%= users_path %>" class="brand-logo">Fukuei</a>
+      <div class="nav-wrapper left-align">
+          <a href="<%= users_path %>" class="brand-logo left-logo ">Fukuei</a>
           <ul class="right ">
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
           <% if current_user %>
