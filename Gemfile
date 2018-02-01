@@ -52,6 +52,7 @@ group :development, :production do
   gem 'material_icons'
   gem 'rails-i18n'
 end
+
 group :production do
   gem 'rails_12factor'
 end
