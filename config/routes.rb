@@ -7,11 +7,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user_sessions do
-    resources :question_alternatives, only:[:new,:create]
+  resources :user_sessions
+
+  resources :questions do
+    resources :question_alternatives
   end
 
-  resources :questions
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする
   post 'logout' => 'user_sessions#destroy', :as => :logout
