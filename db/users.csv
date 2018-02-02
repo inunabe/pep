@@ -1,8 +1,0 @@
-id,"email","crypted_password","salt","name",role,department_id,superior_id,"created_at","updated_at"
-1,"a@gmail.com","$2a$10$26fehrOhr3zgk.woCeKOEeZ2HWmLqZ8JTqHhcROlLeg/aPJqX9gEy","HmX6MEmKA_ddhGdvfMhu","小峯　有貴",3,NULL,4,"2018-01-28 07:15:12","2018-01-29 10:07:13"
-2,"b@gmail.com","$2a$10$8W71Ma1CYIqqPGjsQXkQY.C/7c7NsJwY6ewBea8JZqlSFyMgBM3cC","Ey4JzhoECzLGqQ56Z9YF","籏町　朝人",2,NULL,3,"2018-01-29 02:27:31","2018-01-30 00:33:26"
-3,"c@gmail.com","$2a$10$Sthnm5MaGVpT7tO8uGCgR.QXAaaHw9s5B4bNZ6atDYiJeu4B8gmfu","8tDzH8K4sz-8ys1DcqLQ","古川　直行",2,NULL,NULL,"2018-01-29 02:51:01","2018-01-29 02:51:01"
-4,"d@gmail.com","$2a$10$5CalO0qJvzgnyuh4PB0OiezLBWwdSD2SriFktX9b2ZG9BOZ3TKpVG","zLhey3zR-izMVA7c2mmh","小笠原　輝典",1,NULL,2,"2018-01-29 02:51:49","2018-01-29 10:07:38"
-5,"e@gmail.com","$2a$10$p0Wy94oDbsJyjYVrpayeH.8rkwDCMPjD/oIaHgtAuH39ad6x2ZDJG","bVQvxzRx-SS-euNGs-EE","山本　佳枝",1,NULL,2,"2018-01-29 02:57:55","2018-01-29 10:07:57"
-6,"f@gmail.com","$2a$10$wERuqA8a67fBaMOt3o/u2Ocqu1/bmVgnRjtemEMph9U6WK7Ld4o0m","XFjtrqCsAX8J5fyERqhd","富永　真仁",0,NULL,4,"2018-01-29 09:32:12","2018-01-29 09:32:12"
-10,"g@gmail.com","$2a$10$hDjwVqWo2f0TePmI6wyVH.E9s0hUW1Z.0JS/Qs8ocpdZJ2TzzGUDK","dsYjM3syTscoqgGg5Yxr","好​田​ ​和​成",0,NULL,4,"2018-01-31 06:43:31","2018-01-31 06:43:31"

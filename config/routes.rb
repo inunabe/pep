@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :user_sessions
 
   resources :questions do
-    resources :question_alternatives
+    resources :question_alternatives, only:[:new,:create]
+    resources :answers
   end
 
   get 'login' => 'user_sessions#new', :as => :login
