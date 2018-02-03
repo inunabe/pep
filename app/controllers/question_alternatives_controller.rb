@@ -11,7 +11,7 @@ class QuestionAlternativesController < ApplicationController
 
   private
   def create_params
-    params.require(:question_alternative).permit(:text).merge(question_id: params[:question_id])
+    params.require(:question_alternative).permit(:text,:rate).merge(question_id: params[:question_id])
 
   end
 end

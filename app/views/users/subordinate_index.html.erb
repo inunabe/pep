@@ -1,8 +1,9 @@
+<div class="container browser-default">
 <div class="page-title">
   <h3>ユーザーリスト</h3>
 </div>
 
-  <table class="highlight">
+  <table class="striped">
     <thead>
       <tr>
         <th>氏名</th>
@@ -15,9 +16,10 @@
         <tr>
           <td><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
-          <td><%= link_to '評価する', "#!"%></td>
+          <td><%= link_to '評価する', new_answer_path %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
+</div>

@@ -1,16 +1,24 @@
+<div class="container browser-default">
 <div class="page-title">
 <h3>選択肢登録</h3>
 </div>
 
 <%= form_for [@question,@question_alternative] ,class: "col s12" do |f| %>
-    <div class="row">
-      <div class="input-field col s12">
-        <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
+      <div class="row">
+      <div class="input-field col s8">
         <%= f.label :選択肢登録 %><br>
+        <%= f.text_field :text, id: "question_alternative", class: "materialize-textarea" %>
       </div>
-    </div>
+      </div>
+      <div class="row">
+      <div class="input-field col s4">
+      <%= f.label :評価尺度 %><br>
+      <%= f.select :rate,{"0": 0,"1": 1,"2": 2,"3": 3} %>
+      </div>
+      </div>
 
     <div class="actions right-align">
       <%= f.submit "登録" ,:class=>"btn btn-large btn-question" %>
     </div>
 <% end %>
+</div>
