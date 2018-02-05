@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :question_alternatives, only:[:new,:create]
   end
+  resources :answers, only:[:create]
+  get 'answers/new/:user_id' => 'answers#new'
 
-  resources :answers
 
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする

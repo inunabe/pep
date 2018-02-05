@@ -16,7 +16,7 @@
         <tr>
           <td><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
-          <td><%= link_to '評価する', new_answer_path %></td>
+          <td><%= link_to '評価する', "/answers/new/#{subordinate.id}" %></td>
         </tr>
       <% end %>
     </tbody>

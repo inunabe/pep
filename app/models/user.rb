@@ -17,6 +17,6 @@ class User < ActiveRecord::Base
   has_many :subordinate_users, class_name: 'User', foreign_key: :superior_id
   belongs_to :superior_user, class_name: 'User', foreign_key: :superior_id
 
-  has_many :answering_reviews, class_name: Review, foreign_key: answring_user_id
-  has_many :answered_reviews, class_name: Review, foreign_key: answered_user_id
+  has_many :answering_answers, class_name: 'Answer', foreign_key: :answring_user_id
+  has_many :answered_answer, class_name: 'Answer', foreign_key: :answered_user_id
 end
