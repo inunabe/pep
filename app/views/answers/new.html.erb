@@ -6,14 +6,6 @@
   <div class="contents row answer-table ">
     <!-- テーブルここから -->
     <table class="bordered highlight">
-    <!-- 表の頭の部分 -->
-<!--       <thead >
-        <tr>
-        </tr>
-        </thead>
- -->
-
-        <!-- 表の中身 -->
       <%= form_for (@answer) do |f| %>
         <tbody>
           <% @questions.each_with_index do |question, i|%>
@@ -43,17 +35,13 @@
               </td></label>
             </tr>
           <% end %>
-          <tr>
-            <td>
-              <div class="actions right-align">
-              <%= hidden_field_tag :answered_user_id, @user.id %>
-              <%= f.submit '登録', :class=>"btn btn-large btn-answer" %>
-              </div>
-            </td>
-          </tr>
         </tbody>
     </table>
     <!-- テーブルここまで -->
+        <div class="actions right-align">
+          <%= hidden_field_tag :answered_user_id, @user.id %>
+          <%= f.submit '回答', :class=>"btn btn-large btn-answer" %>
+        </div>
       <% end %>
   </div>
 </div>

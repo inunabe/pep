@@ -62,12 +62,13 @@
 
 
   </header>
-
-  <% if notice %>
-    <p id="notice"><%= flash[:notice]%></p>
-  <% elsif alert %>
-    <p id="alert"><%= flash[:alert]%></p>
-  <% end %>
+  <div class="container browser-default">
+    <% if notice %>
+      <p id="notice"><%= flash[:notice]%></p>
+    <% elsif alert %>
+      <p id="alert"><%= flash[:alert]%></p>
+    <% end %>
+  </div>
   <%= yield %>
 
 </body>

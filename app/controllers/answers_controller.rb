@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
     end
 
 
-    redirect_to "/"
+    redirect_to "/users/#{current_user.id}/subordinate_index",notice:"回答しました"
   end
 
 end
