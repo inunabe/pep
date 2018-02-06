@@ -41,8 +41,6 @@
 
             <% elsif current_user && current_user.nomal?%>
             <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-            <% else %>
-            <li><%= link_to "ユーザー登録", new_user_path %></li>
             <% end %>
 
           </ul>
@@ -50,7 +48,9 @@
       <div class="nav-wrapper left-align">
           <a href="<%= users_path %>" class="brand-logo left-logo ">Fukuei</a>
           <ul class="right ">
+          <% if current_user %>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
+          <% end %>
           <% if current_user %>
             <li><%= link_to "ログアウト", :logout , method: :post %></li>
           <% else %>

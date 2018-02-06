@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         login(user_params[:email], user_params[:password])
-        format.html { redirect_to users_path, notice: 'ユーザー作成しました' }
+        format.html { redirect_to new_user_path, notice: 'ユーザー作成しました' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
