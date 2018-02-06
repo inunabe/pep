@@ -1,6 +1,7 @@
 <%= form_for (@question) ,class: "col s12" do |f| %>
     <div class="row">
       <div class="input-field col s12">
+        <i class="material-icons prefix">mode_edit</i>
         <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
         <%= f.label :質問項目 %><br>
       </div>
