@@ -38,12 +38,12 @@
     </div>
   </div>
   <div class="row">
-  <!-- チェックボックス(role登録) -->
+  <!-- セレクトボックス(role登録) -->
     <div class="input-field col s6">
       <%= f.label :区分 %><br>
       <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"} %>
     </div>
-  <!-- チェックボックス(上長登録) -->
+  <!-- セレクトボックス(上長登録) -->
     <div class="input-field col s6">
       <%= f.label :上長 %><br>
       <%= f.select :superior_id, @superiors.map{|t| [t.name, t.id]} , :prompt => "上長を選択してください" %>

@@ -6,6 +6,7 @@ class AnswersController < ApplicationController
   end
 
   def create
+    binding.pry
     questions = Question.all
     question_ids = questions.pluck(:id)
 
@@ -18,5 +19,10 @@ class AnswersController < ApplicationController
 
     redirect_to "/users/#{current_user.id}/subordinate_index",notice:"回答しました"
   end
+
+  # private
+  # def create_params
+  #   params.require(:question_alternative).permit(:text,:rate).merge(question_id: params[:question_id])
+  # end
 
 end

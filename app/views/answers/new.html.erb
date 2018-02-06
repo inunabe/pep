@@ -14,23 +14,23 @@
             </tr>
             <tr>
               <td>
-                <%= f.radio_button 'rate', 0, name:"rate#{i}", id:"rate0_#{i}", class:"with-gap"%>
+                <%= f.radio_button 'rate', 0, name:"answer_rate#{i}", id:"rate0_#{i}", class:"with-gap"%>
                 <label for="rate0_<%= i %>"><%= question.question_alternatives.find_by(rate: 0).text %></label>
               </td>
               <td>
-                <%= f.radio_button 'rate', 1, name:"rate#{i}", id:"rate1_#{i}", class:"with-gap"%>
+                <%= f.radio_button 'rate', 1, name:"answer_rate#{i}", id:"rate1_#{i}", class:"with-gap"%>
                 <label for="rate1_<%= i %>"><%= question.question_alternatives.find_by(rate: 1).text %></label>
               </td>
               <td>
-                <%= f.radio_button 'rate', 2, name:"rate#{i}", id:"rate2_#{i}", class:"with-gap"%>
+                <%= f.radio_button 'rate', 2, name:"answer_rate#{i}", id:"rate2_#{i}", class:"with-gap"%>
                 <label for="rate2_<%= i %>"><%= question.question_alternatives.find_by(rate: 2).text %></label>
               </td>
               <td>
-                <%= f.radio_button 'rate', 3, name:"rate#{i}", id:"rate3_#{i}", class:"with-gap"%>
+                <%= f.radio_button 'rate', 3, name:"answer_rate#{i}", id:"rate3_#{i}", class:"with-gap"%>
                 <label for="rate3_<%= i %>"><%= question.question_alternatives.find_by(rate: 3).text %></label>
               </td>
               <td>
-                <%= f.radio_button 'rate', 4, name:"rate#{i}", id:"rate4_#{i}", class:"with-gap"%>
+                <%= f.radio_button 'rate', 4, name:"answer_rate#{i}", id:"rate4_#{i}", class:"with-gap"%>
                 <label for="rate4_<%= i %>"><%= question.question_alternatives.find_by(rate: 4).text %>
               </td></label>
             </tr>

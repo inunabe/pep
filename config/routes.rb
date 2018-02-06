@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :user_sessions
 
   resources :questions do
-    resources :question_alternatives
+    resources :question_alternatives, only:[:new,:create]
   end
   resources :answers, only:[:create]
   get 'answers/new/:user_id' => 'answers#new'
