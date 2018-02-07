@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root  'users#index'
+  root  'roots#index'
 
   resources :users do
     member do

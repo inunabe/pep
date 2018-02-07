@@ -46,7 +46,7 @@
 
           </ul>
 
-              <a href="<%= users_path %>" class="brand-logo left-logo ">Fukuei</a>
+              <a href="<%= root_path %>" class="brand-logo left-logo ">Fukuei</a>
 
             <ul class="right ">
             <% if current_user %>
@@ -68,6 +68,8 @@
           <p id="alert"><%= flash[:alert]%></p>
         <% end %>
       </div>
+
     <%= yield %>
+
   </body>
 </html>
