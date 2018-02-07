@@ -1,7 +1,7 @@
 <div class="container browser-default">
-<div class="page-title">
-<h3>部下を評価する</h3>
-</div>
+  <div class="page-title">
+    <h3>部下を評価する</h3>
+  </div>
 
   <div class="contents row answer-table ">
     <!-- テーブルここから -->
@@ -10,7 +10,7 @@
         <tbody>
           <% @questions.each_with_index do |question, i|%>
             <tr>
-              <td class="question-bold question_id"><%= question.id %></td><td colspan=3 class="question-bold"><%= question.text %></td><td></td>
+              <td class="question-bold question_id"></td><td colspan=3 class="question-bold"><%= question.text %></td><td></td>
             </tr>
             <tr>
               <td>
