@@ -1,12 +1,14 @@
 <%= form_tag user_sessions_path, method: :post ,class: "col s12" do %>
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">email</i>
       <%= label_tag :メールアドレス %><br>
       <%= text_field_tag :email, "", class: "login-form" %>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">vpn_key</i>
       <%= label_tag :パスワード %><br>
       <%= password_field_tag :password, "", class: "login-form" %>
     </div>

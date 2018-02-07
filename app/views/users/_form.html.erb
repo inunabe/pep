@@ -15,24 +15,28 @@
 <!-- ここからフォーム -->
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">email</i>
       <%= f.label :メールアドレス %><br>
       <%= f.text_field :email, id: "email", class: "register-form"%>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">lock</i>
       <%= f.label :パスワード %><br>
       <%= f.password_field :password, id: "password", class: "register-form"%>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">lock</i>
       <%= f.label :パスワード（確認）%><br>
       <%= f.password_field :password_confirmation, id: "password", class: "register-form" %>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
       <%= f.label :氏名 %><br>
       <%= f.text_field :name, id: "name", class: "register-form"%>
     </div>
@@ -40,11 +44,13 @@
   <div class="row">
   <!-- セレクトボックス(role登録) -->
     <div class="input-field col s6">
+      <i class="material-icons prefix">folder</i>
       <%= f.label :区分 %><br>
       <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"} %>
     </div>
   <!-- セレクトボックス(上長登録) -->
     <div class="input-field col s6">
+      <i class="material-icons prefix">people</i>
       <%= f.label :上長 %><br>
       <%= f.select :superior_id, @superiors.map{|t| [t.name, t.id]} , :prompt => "上長を選択してください" %>
     </div>
