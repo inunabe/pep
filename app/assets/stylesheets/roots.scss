@@ -5,13 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(112,143,0,1);
-background: -moz-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
-background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(112,143,0,1)), color-stop(61%, rgba(111,141,0,0.07)), color-stop(100%, rgba(110,140,0,0.07)));
-background: -webkit-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
-background: -o-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
-background: -ms-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
-background: linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%),url("suiden.jpg");
+  background: rgba(0,88,143,1);
+background: -moz-linear-gradient(45deg, rgba(0,88,143,1) 0%, rgba(255,241,89,0.29) 73%, rgba(255,241,89,0.07) 95%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(0,88,143,1)), color-stop(73%, rgba(255,241,89,0.29)), color-stop(95%, rgba(255,241,89,0.07)));
+background: -webkit-linear-gradient(45deg, rgba(0,88,143,1) 0%, rgba(255,241,89,0.29) 73%, rgba(255,241,89,0.07) 95%);
+background: -o-linear-gradient(45deg, rgba(0,88,143,1) 0%, rgba(255,241,89,0.29) 73%, rgba(255,241,89,0.07) 95%);
+background: -ms-linear-gradient(45deg, rgba(0,88,143,1) 0%, rgba(255,241,89,0.29) 73%, rgba(255,241,89,0.07) 95%);
+background: linear-gradient(45deg, rgba(0,88,143,1) 0%, rgba(255,241,89,0.29) 73%, rgba(255,241,89,0.07) 95%),url("suiden.jpg");
 }
 
 .page-title a {
