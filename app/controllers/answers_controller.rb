@@ -6,7 +6,6 @@ class AnswersController < ApplicationController
   end
 
   def create
-    binding.pry
     questions = Question.all
     question_ids = questions.pluck(:id)
 
