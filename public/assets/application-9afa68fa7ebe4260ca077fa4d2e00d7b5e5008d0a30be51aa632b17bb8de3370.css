@@ -12835,26 +12835,25 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
 nav .nav-wrapper .brand-logo {
   text-align: left;
-  padding-left: 10px;
 }
 
-/* line 6, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
+/* line 5, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
 body header nav .nav-wrapper {
   background-color: #66BB6A;
 }
 
-/* line 10, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
+/* line 9, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #66BB6A !important;
 }
 
-/* line 14, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
+/* line 13, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
 nav .nav-wrapper .left-logo {
-  left: 2%;
+  left: 1%;
   transform: none;
 }
 
-/* line 5, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 .actions .btn-question {
   background-color: #66BB6A;
   font-size: 17px;
@@ -12862,10 +12861,33 @@ nav .nav-wrapper .left-logo {
   color: none;
   text-transform: none;
 }
-/* line 12, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 8, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 .actions .btn-question:hover {
   background-color: #66BB6A;
   opacity: 0.8;
+}
+
+/* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/roots.scss */
+.top-page {
+  height: calc(100vh);
+  background: #e0f2f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #708f00;
+  background: -moz-linear-gradient(45deg, #708f00 0%, rgba(111, 141, 0, 0.07) 61%, rgba(110, 140, 0, 0.07) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, #708f00), color-stop(61%, rgba(111, 141, 0, 0.07)), color-stop(100%, rgba(110, 140, 0, 0.07)));
+  background: -webkit-linear-gradient(45deg, #708f00 0%, rgba(111, 141, 0, 0.07) 61%, rgba(110, 140, 0, 0.07) 100%);
+  background: -o-linear-gradient(45deg, #708f00 0%, rgba(111, 141, 0, 0.07) 61%, rgba(110, 140, 0, 0.07) 100%);
+  background: -ms-linear-gradient(45deg, #708f00 0%, rgba(111, 141, 0, 0.07) 61%, rgba(110, 140, 0, 0.07) 100%);
+  background: linear-gradient(45deg, #708f00 0%, rgba(111, 141, 0, 0.07) 61%, rgba(110, 140, 0, 0.07) 100%), url("suiden.jpg");
+}
+
+/* line 17, /Users/fukuei/projects/pep/app/assets/stylesheets/roots.scss */
+.page-title a {
+  color: #FFF;
+  margin: 0;
+  font-size: 60px;
 }
 
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/user_sessions.scss */
@@ -12906,9 +12928,9 @@ nav .nav-wrapper .left-logo {
 
 /* line 20, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .page-title h3 {
-  font-size: 40px;
+  font-size: 35px;
   color: #66BB6A;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 /* line 27, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
@@ -12928,5 +12950,5 @@ nav .nav-wrapper .left-logo {
 
 /* line 8, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif !important;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
