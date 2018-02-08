@@ -1,13 +1,21 @@
 .top-page {
-  height: calc(100vh - 64px);
-  background: #FCE4EC;
-  background-image: url("suiden.jpg");
+  height: calc(100vh);
+  background: #e0f2f1;
+  // background-image: url("suiden.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(112,143,0,1);
+background: -moz-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(112,143,0,1)), color-stop(61%, rgba(111,141,0,0.07)), color-stop(100%, rgba(110,140,0,0.07)));
+background: -webkit-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
+background: -o-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
+background: -ms-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
+background: linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%),url("suiden.jpg");
 }
-
 .page-title h1 {
   color: #FFF;
   margin: 0;
-  text-align: center;
-  padding-top: 270px;
-  height: calc(477px - 270px)
 }
+
+

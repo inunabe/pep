@@ -1,10 +1,10 @@
 @import "materialize/components/color";
-$primary-color: color("green", "lighten-1") !default;
+$primary-color: color("green", "lighten-2") !default;
 @import 'materialize';
 
 @import '*';
 
 // フォント指定
 body {
-  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif !important;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
