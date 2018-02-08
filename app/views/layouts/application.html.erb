@@ -20,47 +20,48 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class="nav-wrapper left-align">
-          <ul id="dropdown1" class="dropdown-content">
-            <% if current_user && current_user.executive? %>
-              <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
+      <header>
+        <nav>
+          <div class="nav-wrapper left-align">
+            <ul id="dropdown1" class="dropdown-content">
+              <% if current_user && current_user.executive? %>
+                <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
+                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
 
-            <% elsif current_user && current_user.manager? %>
+              <% elsif current_user && current_user.manager? %>
 
-              <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
+                <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
+                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
 
-            <% elsif current_user && current_user.admin? %>
+              <% elsif current_user && current_user.admin? %>
 
-              <li><%= link_to "ユーザー登録", new_user_path %></li>
-              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-              <li><%= link_to "質問項目登録", new_question_path %></li>
-              <li><%= link_to "質問項目一覧", questions_path %></li>
+                <li><%= link_to "ユーザー登録", new_user_path %></li>
+                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
+                <li><%= link_to "質問項目登録", new_question_path %></li>
+                <li><%= link_to "質問項目一覧", questions_path %></li>
 
-            <% elsif current_user && current_user.nomal? %>
-              <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-            <% end %>
+              <% elsif current_user && current_user.nomal? %>
+                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
+              <% end %>
 
-          </ul>
-
-              <a href="<%= root_path %>" class="brand-logo left-logo ">Fukuei</a>
-
-            <ul class="right ">
-            <% if current_user %>
-              <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
-            <% end %>
-            <% if current_user %>
-              <li><%= link_to "ログアウト", :logout , method: :post %></li>
-            <% else %>
-              <li><%= link_to "ログイン", :login , method: :get %></li>
-            <% end %>
             </ul>
-        </div>
-      </nav>
-    </header>
+
+                <a href="<%= root_path %>" class="brand-logo left-logo ">Fukuei</a>
+
+              <ul class="right ">
+              <% if current_user %>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
+              <% end %>
+              <% if current_user %>
+                <li><%= link_to "ログアウト", :logout , method: :post %></li>
+              <% else %>
+                <li><%= link_to "ログイン", :login , method: :get %></li>
+              <% end %>
+              </ul>
+          </div>
+        </nav>
+      </header>
+
       <div class="container browser-default">
         <% if notice %>
           <p id="notice"><%= flash[:notice]%></p>

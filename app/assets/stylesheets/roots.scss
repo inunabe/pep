@@ -1,6 +1,13 @@
-body .container .top-page {
-  background-image: url(/assets/images/suito.jpg");
-  width: 1441px;
+.top-page {
+  height: calc(100vh - 64px);
+  background: #FCE4EC;
+  background-image: url("suiden.jpg");
+}
 
-  background-image: image-url("hoge.png");
+.page-title h1 {
+  color: #FFF;
+  margin: 0;
+  text-align: center;
+  padding-top: 270px;
+  height: calc(477px - 270px)
 }
