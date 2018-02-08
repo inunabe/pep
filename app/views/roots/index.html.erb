@@ -1,14 +1,11 @@
-
-
-
 <div class="top-page">
-  <div class="page-title valign-wrapper">
-    <a href="/user_sessions/new">
-      <h1>
-        Personel <br>
-        Evaluation <br>
-        Program <br>
-      </h1>
-    </a>
+  <div class="page-title">
+    <% if current_user %>
+      <%= link_to raw("Personel<br/>Evaluation<br/>Program"), users_path %>
+    <% else %>
+      <%= link_to raw("Personel<br/>Evaluation<br/>Program"), login_path %>
+    <% end %>
   </div>
 </div>
+
+

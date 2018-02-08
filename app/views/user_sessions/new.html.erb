@@ -1,7 +1,14 @@
 <div class="container browser-default">
+  <div class="flash_message">
+    <% if notice %>
+      <p id="notice"><%= flash[:notice]%></p>
+    <% elsif alert %>
+      <p id="alert"><%= flash[:alert]%></p>
+    <% end %>
+  </div>
 <div class="page-title">
-<h3>ログイン</h3>
+  <h3>ログイン</h3>
 </div>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 </div>

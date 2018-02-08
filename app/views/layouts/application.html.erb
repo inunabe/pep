@@ -37,6 +37,7 @@
               <% elsif current_user && current_user.admin? %>
 
                 <li><%= link_to "ユーザー登録", new_user_path %></li>
+                <li><%= link_to "ユーザー一覧", users_path %></li>
                 <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
                 <li><%= link_to "質問項目登録", new_question_path %></li>
                 <li><%= link_to "質問項目一覧", questions_path %></li>
@@ -55,8 +56,6 @@
               <% end %>
               <% if current_user %>
                 <li><%= link_to "ログアウト", :logout , method: :post %></li>
-              <% else %>
-                <li><%= link_to "ログイン", :login , method: :get %></li>
               <% end %>
               </ul>
           </div>
@@ -64,13 +63,7 @@
         <% end %>
       </header>
 
-      <div class="container browser-default">
-        <% if notice %>
-          <p id="notice"><%= flash[:notice]%></p>
-        <% elsif alert %>
-          <p id="alert"><%= flash[:alert]%></p>
-        <% end %>
-      </div>
+
 
     <%= yield %>
 

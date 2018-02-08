@@ -13,9 +13,11 @@ background: -o-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07)
 background: -ms-linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%);
 background: linear-gradient(45deg, rgba(112,143,0,1) 0%, rgba(111,141,0,0.07) 61%, rgba(110,140,0,0.07) 100%),url("suiden.jpg");
 }
-.page-title h1 {
+
+.page-title a {
   color: #FFF;
   margin: 0;
+  font-size: 60px;
 }
 
 
