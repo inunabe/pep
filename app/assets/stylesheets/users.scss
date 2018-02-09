@@ -36,7 +36,18 @@
     opacity: 0.6;
   }
 }
-
+.td-title {
+  text-align: reft;
+}
+.table-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.answer_table tbody ,question-text td{
+  font-size: 18px;
+  text-align: center;
+}
 
 
 // .link {

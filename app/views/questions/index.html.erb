@@ -1,4 +1,3 @@
-<div class="container browser-default">
   <div class="page-title">
     <h3>質問項目一覧</h3>
   </div>
@@ -19,10 +18,8 @@
         <td><%= question.text %></td>
         <td><%= link_to "編集", edit_question_path(question) %></td>
         <td><%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
-        <td><%= link_to "選択肢登録", new_question_question_alternative_path(question) %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-</div>

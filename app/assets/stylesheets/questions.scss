@@ -4,9 +4,14 @@
   width: 200px;
   color: none;
   text-transform: none;
+  margin: 100px 0;
 
   &:hover{
     background-color: $primary-color;
     opacity: 0.8;
    }
+}
+
+textarea.materialize-textarea{
+  padding: 0 !important;
 }

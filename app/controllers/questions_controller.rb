@@ -2,6 +2,9 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    5.times {
+      @question.question_alternatives.build
+    }
   end
 
   def create
@@ -31,7 +34,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:text)
+    params.require(:question).permit(:text,question_alternatives_attributes: [:text,:rate])
     # params.require(:モデル名).permit(:カラム名)
   end
 end

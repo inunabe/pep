@@ -11,6 +11,15 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+      if current_user.executive?
+        @answers = current_user.answering_answer
+      elsif current_user.manager?
+        @answers = current_user.answering_answer
+      elsif current_user.admin?
+        @answers = current_user.answered_answer
+      elsif current_user.nomal?
+        @answers = current_user.answered_answer
+      end
   end
 
 # 部下一覧を表示させる
