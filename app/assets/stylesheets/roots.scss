@@ -1,4 +1,4 @@
-.top-page {
+.toppage-contents {
   height: calc(100vh);
   background: #e0f2f1;
   // background-image: url("suiden.jpg");
@@ -19,5 +19,12 @@ background: linear-gradient(45deg, rgba(0,88,143,1) 0%, rgba(255,241,89,0.29) 73
   margin: 0;
   font-size: 60px;
 }
-
-
+.flash-root  {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  & p {
+    color: #FFF;
+    font-size: 16px;
+  }
+}

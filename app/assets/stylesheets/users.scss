@@ -15,12 +15,15 @@
     opacity: 0.8;
   }
 }
+.btn-register input {
+  outline: 0;
+}
+
 
 // 各ページタイトル
 .page-title h3{
   font-size: 35px;
   color: $primary-color;
-  padding-top: 10px;
 }
 
 // ユーザー一覧画面,質問項目一覧
@@ -44,9 +47,13 @@
   font-weight: bold;
   margin-bottom: 30px;
 }
-.answer_table tbody ,question-text td{
+.question_alternative-text {
+  text-align: center;
+}
+.answer_table tbody .question-text{
   font-size: 18px;
   text-align: center;
+  font-weight: bold;
 }
 
 

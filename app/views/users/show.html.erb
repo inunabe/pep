@@ -2,20 +2,17 @@
   <h3>評価結果</h3>
 </div>
 <div class="table-title center-align">
-  <%=current_user.superior_user.name %>さんからの評価
+  <%=current_user.superior_user.name %> さんからの評価
 </div>
   <table class="bordered highlight answer_table">
-    <thead class="td-title">
-      <td colspan="2">評価尺度</td>
-    </thead>
     <tbody >
       <% @answers.each do |answer| %>
-        <tr class="question-text">
-          <td colspan="2"><%= answer.question.text %></td>
+        <tr>
+          <td class="question-text" colspan="2"><%= answer.question.text %></td>
         </tr>
         <tr>
           <td><%= answer.rate %></td>
-          <td colspan="2"><% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate) %>
+          <td colspan="2" class="question_alternative-text"><% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate) %>
           <%= question_alternative.text %></td>
         </tr>
       <% end %>

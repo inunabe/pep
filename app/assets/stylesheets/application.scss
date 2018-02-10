@@ -8,3 +8,7 @@ $primary-color: color("green", "lighten-1") !default;
 body {
   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
+
+.container {
+  padding-top: 64px;
+}

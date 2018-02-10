@@ -23,7 +23,7 @@
       <header>
         <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
         <nav>
-          <div class="nav-wrapper left-align">
+          <div class="left-align">
             <ul id="dropdown1" class="dropdown-content">
               <% if current_user && current_user.executive? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
@@ -68,13 +68,15 @@
     <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
       <div class="container browser-default">
     <% end %>
-        <div class="flash_message">
+    <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
+        <div class="flash_message center-align  z-depth-3">
         <% if notice %>
           <p id="notice"><%= flash[:notice]%></p>
         <% elsif alert %>
           <p id="alert"><%= flash[:alert]%></p>
         <% end %>
         </div>
+    <% end %>
     <%= yield %>
       </div>
   </body>

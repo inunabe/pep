@@ -12,9 +12,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
       if current_user.executive?
-        @answers = current_user.answering_answer
+        @answers = current_user.answering_answers
       elsif current_user.manager?
-        @answers = current_user.answering_answer
+        @answers = current_user.answering_answers
       elsif current_user.admin?
         @answers = current_user.answered_answer
       elsif current_user.nomal?

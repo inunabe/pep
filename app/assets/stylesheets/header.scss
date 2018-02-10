@@ -1,8 +1,6 @@
-nav .nav-wrapper .brand-logo{
-  text-align: left;
-}
 
-body header nav .nav-wrapper {
+
+body header nav {
   background-color: $primary-color;
 }
 
@@ -10,7 +8,13 @@ body header nav .nav-wrapper {
   color: $primary-color !important;
 }
 
-nav .nav-wrapper .left-logo {
+nav .left-logo {
   left: 1%;
   transform: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
 }

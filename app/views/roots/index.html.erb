@@ -1,11 +1,14 @@
-<div class="top-page">
-  <div class="page-title">
-    <% if current_user %>
-      <%= link_to raw("Personel<br/>Evaluation<br/>Program"), users_path %>
-    <% else %>
-      <%= link_to raw("Personel<br/>Evaluation<br/>Program"), login_path %>
-    <% end %>
+<div class="toppage">
+  <div class="flash-root">
+    <p id="notice-root"><%= flash[:notice]%></p>
+  </div>
+  <div class="toppage-contents">
+    <div class="page-title">
+      <% if current_user %>
+        <%= link_to raw("Personel<br/>Evaluation<br/>Program"), users_path %>
+      <% else %>
+        <%= link_to raw("Personel<br/>Evaluation<br/>Program"), login_path %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
