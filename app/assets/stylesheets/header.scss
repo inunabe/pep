@@ -1,20 +1,16 @@
-
-
 body header nav {
   background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  & .left-logo {
+    left: 1%;
+    transform: none;
+  }
 }
 
 .dropdown-content li > a, .dropdown-content li > span {
   color: $primary-color !important;
 }
 
-nav .left-logo {
-  left: 1%;
-  transform: none;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
