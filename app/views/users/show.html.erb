@@ -2,16 +2,22 @@
   <h3>評価結果</h3>
 </div>
 <div class="table-title center-align">
-  <%=current_user.superior_user.name %> さんからの評価
+  <% if current_user.nomal? %>
+    <%= current_user.superior_user.name %> さんからの評価
+  <% elsif current_user.manager?%>
+    <%= @subordinate.name %> さんへの評価
+  <% elsif current_user.executive? %>
+    <%= @subordinate.name %> さんへの評価
+  <% end %>
 </div>
   <table class="bordered highlight answer_table">
-    <tbody >
+    <tbody>
       <% @answers.each do |answer| %>
         <tr>
           <td class="question-text" colspan="2"><%= answer.question.text %></td>
         </tr>
         <tr>
-          <td><%= answer.rate %></td>
+          <td>評価ポイント：<%= answer.rate %></td>
           <td colspan="2" class="question_alternative-text"><% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate) %>
           <%= question_alternative.text %></td>
         </tr>

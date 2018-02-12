@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
+      get 'mypage'
       get 'subordinate_index'
     end
   end

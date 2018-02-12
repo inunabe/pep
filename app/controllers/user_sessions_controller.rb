@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to(users_path, notice: 'ログインしました')
+      redirect_back_or_to(users_path, notice: "#{current_user.name}\sさんでログインしました")
     else
       # flash.now[:alert] = 'ログインできませんでした'
       # render action: 'new'

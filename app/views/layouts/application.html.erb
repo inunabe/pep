@@ -27,14 +27,13 @@
             <ul id="dropdown1" class="dropdown-content">
               <% if current_user && current_user.executive? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-                <li><%= link_to "評価結果", answers_path %></li>
                 <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-                <li><%= link_to "評価閲覧", user_path(current_user), method: :get %></li>
+                <li><%= link_to "評価閲覧", mypage_user_path(current_user), method: :get %></li>
 
               <% elsif current_user && current_user.manager? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
                 <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-                <li><%= link_to "評価閲覧", user_path(current_user), method: :get %></li>
+                <li><%= link_to "評価閲覧", mypage_user_path(current_user), method: :get %></li>
 
               <% elsif current_user && current_user.admin? %>
                 <li><%= link_to "ユーザー登録", new_user_path %></li>
@@ -51,7 +50,7 @@
 
             </ul>
 
-                <a href="<%= root_path %>" class="brand-logo left-logo ">Fukuei</a>
+                <a href="<%= root_path %>" class="brand-logo left-logo left-align">Fukuei</a>
 
               <ul class="right">
               <% if current_user %>
@@ -65,19 +64,21 @@
         </nav>
         <% end %>
       </header>
-    <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
-      <div class="container browser-default">
-    <% end %>
-    <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
-        <div class="flash_message center-align  z-depth-3">
-        <% if notice %>
-          <p id="notice"><%= flash[:notice]%></p>
-        <% elsif alert %>
-          <p id="alert"><%= flash[:alert]%></p>
+      <div class="contents">
+        <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
+          <div class="container browser-default">
         <% end %>
-        </div>
-    <% end %>
-    <%= yield %>
+        <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
+          <div class="flash_message center-align  z-depth-1">
+          <% if notice %>
+            <p id="notice"><%= flash[:notice]%></p>
+          <% elsif alert %>
+            <p id="alert"><%= flash[:alert]%></p>
+        <% end %>
+          </div>
+        <% end %>
+        <%= yield %>
+          </div>
       </div>
   </body>
 </html>

@@ -1,15 +1,17 @@
 <div class="page-title">
   <h3>部下一覧</h3>
 </div>
-
+<div class="table-title center-align">
+  <%= current_user.name%> さんの部下一覧
+</div>
   <table class="bordered highlight">
-
     <tbody>
       <% @subordinates.each do |subordinate| %>
         <tr>
           <td><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
           <td><%= link_to '評価する', "/answers/new/#{subordinate.id}" %></td>
+          <td><%= link_to '評価閲覧', user_path(subordinate.id) %></td>
         </tr>
       <% end %>
     </tbody>

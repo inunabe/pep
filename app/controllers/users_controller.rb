@@ -11,15 +11,19 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-      if current_user.executive?
-        @answers = current_user.answering_answers
-      elsif current_user.manager?
-        @answers = current_user.answering_answers
-      elsif current_user.admin?
-        @answers = current_user.answered_answer
-      elsif current_user.nomal?
-        @answers = current_user.answered_answer
-      end
+    if current_user.nomal?
+      @answers = current_user.answered_answer
+    elsif current_user.manager?
+      @answers = Answer.where(answered_user_id:params[:id])
+      # @answers = current_user.answering_answers.where(answered_user_id:params[:id])
+      @subordinate = User.find(params[:id])
+    elsif current_user.executive?
+      @answers = Answer.where(answered_user_id:params[:id])
+      @subordinate = User.find(params[:id])
+    end
+  end
+  def mypage
+    @answers = current_user.answered_answer
   end
 
 # 部下一覧を表示させる

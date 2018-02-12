@@ -20,12 +20,6 @@
 }
 
 
-// 各ページタイトル
-.page-title h3{
-  font-size: 35px;
-  color: $primary-color;
-}
-
 // ユーザー一覧画面,質問項目一覧
 .bordered tbody tr td a{
   color: $primary-color;
@@ -39,9 +33,17 @@
     opacity: 0.6;
   }
 }
-.td-title {
-  text-align: reft;
+.user-name {
+  text-align: left;
 }
+.user-email {
+  text-align: right;
+}
+.user-link {
+  text-align: right;
+}
+
+// 評価閲覧ページ
 .table-title {
   font-size: 25px;
   font-weight: bold;
@@ -55,14 +57,4 @@
   text-align: center;
   font-weight: bold;
 }
-
-
-// .link {
-//   display: block;
-//   height: 0;
-//   width: 0;
-//   height: 36px;
-//   width: 260px;
-//   background-color: green;
-// }
 
