@@ -8,7 +8,6 @@
   background-color: $primary-color;
   font-size: 17px;
   width: 200px;
-  margin: 100px 0;
 
   &:hover {
     background-color: $primary-color;
@@ -34,26 +33,25 @@
   }
 }
 .user-name {
-  text-align: left;
+  text-align: center;
 }
 .user-email {
-  text-align: right;
+  text-align: center;
 }
 .user-link {
-  text-align: right;
+  text-align: center;
 }
 
 // 評価閲覧ページ
 .table-title {
   font-size: 25px;
-  font-weight: bold;
   margin-bottom: 30px;
 }
 .question_alternative-text {
-  text-align: center;
+  text-align: left;
 }
 .answer_table tbody .question-text{
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
   font-weight: bold;
 }

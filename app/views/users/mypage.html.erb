@@ -8,12 +8,13 @@
   <tbody >
     <% @answers.each do |answer| %>
       <tr>
-        <td class="question-text" colspan="2"><%= answer.question.text %></td>
+        <td class="question-text" colspan="2"><%= answer.question_id %> ： <%= answer.question.text %></td>
       </tr>
       <tr>
-        <td><%= answer.rate %></td>
-        <td colspan="2" class="question_alternative-text"><% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate) %>
-        <%= question_alternative.text %></td>
+        <td>評価ポイント：<%= answer.rate %></td>
+        <td class="question_alternative-text">
+          <%= @question_alternative.text %>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -11,7 +11,11 @@
           <td><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
           <td><%= link_to '評価する', "/answers/new/#{subordinate.id}" %></td>
+        <% if subordinate.answered_answer.present? %>
           <td><%= link_to '評価閲覧', user_path(subordinate.id) %></td>
+        <% elsif %>
+          <td></td>
+        <% end %>
         </tr>
       <% end %>
     </tbody>

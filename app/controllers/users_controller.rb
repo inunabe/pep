@@ -14,16 +14,25 @@ class UsersController < ApplicationController
     if current_user.nomal?
       @answers = current_user.answered_answer
     elsif current_user.manager?
-      @answers = Answer.where(answered_user_id:params[:id])
-      # @answers = current_user.answering_answers.where(answered_user_id:params[:id])
+      @answers = current_user.answering_answers.where(answered_user_id:params[:id])
       @subordinate = User.find(params[:id])
     elsif current_user.executive?
       @answers = Answer.where(answered_user_id:params[:id])
       @subordinate = User.find(params[:id])
+    elsif current_user.admin?
+      @answers = Answer.where(answered_user_id:params[:id])
+      @answered_user = User.find(params[:id])
+      @answering_user = @answered_user.superior_user
+    end
+    @answers.each do |answer|
+      @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
     end
   end
   def mypage
     @answers = current_user.answered_answer
+    @answers.each do |answer|
+      @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
+    end
   end
 
 # 部下一覧を表示させる

@@ -8,18 +8,23 @@
     <%= @subordinate.name %> さんへの評価
   <% elsif current_user.executive? %>
     <%= @subordinate.name %> さんへの評価
+  <% elsif current_user.admin? %>
+    <%= @answering_user.name %> さんから<br>
+    <%= @answered_user.name %> さんへの評価
   <% end %>
 </div>
   <table class="bordered highlight answer_table">
     <tbody>
       <% @answers.each do |answer| %>
         <tr>
-          <td class="question-text" colspan="2"><%= answer.question.text %></td>
+          <td class="question-text"><%= answer.question_id %></td>
+          <td class="question-text"><%= answer.question.text %></td>
         </tr>
         <tr>
           <td>評価ポイント：<%= answer.rate %></td>
-          <td colspan="2" class="question_alternative-text"><% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate) %>
-          <%= question_alternative.text %></td>
+          <td class="question_alternative-text">
+            <%= @question_alternative.text %>
+          </td>
         </tr>
       <% end %>
     </tbody>
