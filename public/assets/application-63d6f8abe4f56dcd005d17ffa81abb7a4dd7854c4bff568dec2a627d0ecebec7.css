@@ -12831,27 +12831,23 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   padding: 10px 0;
 }
 
-/* line 3, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
+/* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
 body header nav {
   background-color: #66BB6A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
 }
-
 /* line 7, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
-.dropdown-content li > a, .dropdown-content li > span {
-  color: #66BB6A !important;
-}
-
-/* line 11, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
-nav .left-logo {
+body header nav .left-logo {
   left: 1%;
   transform: none;
 }
 
-/* line 16, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* line 13, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #66BB6A !important;
 }
 
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
@@ -12861,20 +12857,19 @@ nav {
   width: 200px;
   color: none;
   text-transform: none;
-  margin: 100px 0;
 }
-/* line 9, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 8, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 .actions .btn-question:hover {
   background-color: #66BB6A;
   opacity: 0.8;
 }
 
-/* line 15, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 14, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 .btn-question input {
   outline: 0;
 }
 
-/* line 20, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 19, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 textarea.materialize-textarea {
   padding: 0 !important;
 }
@@ -12947,26 +12942,19 @@ textarea.materialize-textarea {
   background-color: #66BB6A;
   font-size: 17px;
   width: 200px;
-  margin: 100px 0;
 }
-/* line 13, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 12, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .actions .register .btn-register:hover {
   background-color: #66BB6A;
   opacity: 0.8;
 }
 
-/* line 18, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 17, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .btn-register input {
   outline: 0;
 }
 
-/* line 24, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
-.page-title h3 {
-  font-size: 35px;
-  color: #66BB6A;
-}
-
-/* line 30, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 23, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .bordered tbody tr td a {
   color: #66BB6A;
   opacity: 1;
@@ -12976,31 +12964,40 @@ textarea.materialize-textarea {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 38, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 31, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .bordered tbody tr td a:hover {
   opacity: 0.6;
 }
 
-/* line 42, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
-.td-title {
-  text-align: reft;
+/* line 35, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.user-name {
+  text-align: center;
 }
 
-/* line 45, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 38, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.user-email {
+  text-align: center;
+}
+
+/* line 41, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.user-link {
+  text-align: center;
+}
+
+/* line 46, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .table-title {
   font-size: 25px;
-  font-weight: bold;
   margin-bottom: 30px;
 }
 
 /* line 50, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .question_alternative-text {
-  text-align: center;
+  text-align: left;
 }
 
 /* line 53, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .answer_table tbody .question-text {
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
   font-weight: bold;
 }
@@ -13010,7 +13007,30 @@ body {
   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
-/* line 12, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+/* line 11, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+body {
+  height: 100%;
+  background: #FCFCFC;
+}
+
+/* line 15, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+.contents {
+  min-height: 100%;
+}
+
+/* line 18, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 .container {
   padding-top: 64px;
+  padding-bottom: 100px;
+}
+
+/* line 23, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+.page-title h3 {
+  font-size: 35px;
+  color: #66BB6A;
+}
+
+/* line 29, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+td {
+  font-size: 17px;
 }
