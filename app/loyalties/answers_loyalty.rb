@@ -1,0 +1,2 @@
+class AnswersLoyalty < ApplicationLoyalty
+end

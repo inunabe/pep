@@ -1,0 +1,2 @@
+class UserSessionsLoyalty < ApplicationLoyalty
+end

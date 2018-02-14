@@ -1,0 +1,2 @@
+class QuestionAlternativesLoyalty < ApplicationLoyalty
+end

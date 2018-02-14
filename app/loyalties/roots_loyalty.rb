@@ -1,0 +1,2 @@
+class RootsLoyalty < ApplicationLoyalty
+end

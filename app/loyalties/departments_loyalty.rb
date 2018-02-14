@@ -1,0 +1,2 @@
+class DepartmentsLoyalty < ApplicationLoyalty
+end

@@ -6,14 +6,13 @@
 </div>
 <table class="bordered highlight answer_table">
   <tbody >
-    <% @answers.each do |answer| %>
+    <% @answers.each_with_index do |answer,i| %>
       <tr>
-        <td class="question-text" colspan="2"><%= answer.question_id %> ： <%= answer.question.text %></td>
+        <td class="question-text" ><%= "#{i+1}" %> ： <%= answer.question.text %></td>
       </tr>
       <tr>
-        <td>評価ポイント：<%= answer.rate %></td>
         <td class="question_alternative-text">
-          <%= @question_alternative.text %>
+          評価ポイント：<%= answer.rate %> &emsp; <%= @question_alternative.text %>
         </td>
       </tr>
     <% end %>

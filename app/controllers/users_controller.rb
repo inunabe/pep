@@ -29,6 +29,8 @@ class UsersController < ApplicationController
     end
   end
   def mypage
+    @user = User.find(params[:id])
+    redirect_to ({:action => 'index'}), :alert => 'アクセス権限がありません' unless current_user.id == @user.id || current_user.id == @user.superior_id || current_user.admin?
     @answers = current_user.answered_answer
     @answers.each do |answer|
       @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
@@ -81,7 +83,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to root_path, notice: 'ユーザー情報を編集しました' }
+        format.html { redirect_to ({action:'index'}), notice: 'ユーザー情報を編集しました' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

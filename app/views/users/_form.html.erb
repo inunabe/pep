@@ -3,7 +3,6 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
        <h4><%= @user.errors.size %> 件のエラーがあります</h4>
-
       <ul>
       <% @user.errors.full_messages.each  do |message| %>
         <li><%= message %></li>

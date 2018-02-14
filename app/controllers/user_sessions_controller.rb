@@ -13,8 +13,6 @@ class UserSessionsController < ApplicationController
     if @user = login(params[:email], params[:password])
       redirect_back_or_to(users_path, notice: "#{current_user.name}\sさんでログインしました")
     else
-      # flash.now[:alert] = 'ログインできませんでした'
-      # render action: 'new'
       redirect_to login_path, alert: "ログインに失敗しました"
       #他のアクションのテンプレートを表示
       #「new.html.erb」を表示する

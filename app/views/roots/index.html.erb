@@ -1,6 +1,10 @@
 <div class="toppage">
   <div class="flash-root">
+    <% if notice %>
     <p id="notice-root"><%= flash[:notice]%></p>
+    <% elsif alert %>
+    <p id="alert-root"><%= flash[:alert]%></p>
+    <% end %>
   </div>
   <div class="toppage-contents">
     <div class="page-title">

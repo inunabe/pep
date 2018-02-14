@@ -35,3 +35,4 @@ errors:
         one: "１つのエラーがあります。修正して再度送信して下さい。:"
         #other: "%{count} errors prohibited this %{resource} from being saved:"
         other: "%{count}のエラーがあります。修正して再度送信して下さい。"
+

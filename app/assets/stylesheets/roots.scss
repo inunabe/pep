@@ -23,8 +23,12 @@
   width: 100%;
   position: absolute;
   text-align: center;
-  & p {
-    color: #FFF;
-    font-size: 16px;
-  }
+}
+#notice-root {
+  color: #FFF;
+  font-size: 16px;
+}
+#alert-root {
+  color: #EC7B7C;
+  font-size: 16px;
 }

@@ -51,6 +51,7 @@ group :development, :production do
   gem 'materialize-sass'
   gem 'material_icons'
   gem 'rails-i18n'
+  gem 'banken'
 end
 
 group :production do
