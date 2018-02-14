@@ -11,4 +11,3 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, alert: "ログインしてください"
   end
 end
-waaaaaaaaaaaaaaaaai
