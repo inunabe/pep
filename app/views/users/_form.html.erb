@@ -1,4 +1,4 @@
-<%= form_for (@user) ,class: "col s12" do |f| %>
+<%= form_for @user ,class: "col s12" do |f| %>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -30,7 +30,7 @@
     <div class="input-field col s12">
       <i class="material-icons prefix">lock</i>
       <%= f.label :パスワード（確認）%><br>
-      <%= f.password_field :password_confirmation, id: "password", class: "register-form" %>
+      <%= f.password_field :password_confirmation, id: "password", class: "register-form"%>
     </div>
   </div>
   <div class="row">
@@ -51,7 +51,7 @@
     <div class="input-field col s6">
       <i class="material-icons prefix">people</i>
       <%= f.label :上長 %><br>
-      <%= f.select :superior_id, @superiors.map{|t| [t.name, t.id]} , :prompt => "上長を選択してください" %>
+      <%=f.select :superior_id, @superiors.map{|t| [t.name, t.id]}, :include_blank => true %>
     </div>
   <!-- ここまで -->
   </div>

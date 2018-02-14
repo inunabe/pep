@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
   validates :email, uniqueness: true
-
+  validates :name, uniqueness: true, presence: true
+  validates :superior_id, numericality: true, allow_blank: true
   enum role: {
     nomal: 0,  #係長まで
     manager: 1,  #課長・次長

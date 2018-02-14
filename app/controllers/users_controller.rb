@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:index,:new,:create]
+  skip_before_action :require_login, only: :new
   before_action :set_user, only: [:show, :edit, :update,]
 
   # GET /users
@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
     if current_user.nomal?
       @answers = current_user.answered_answer
     elsif current_user.manager?
@@ -28,9 +30,10 @@ class UsersController < ApplicationController
       @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
     end
   end
+
   def mypage
     @user = User.find(params[:id])
-    redirect_to ({:action => 'index'}), :alert => 'アクセス権限がありません' unless current_user.id == @user.id || current_user.id == @user.superior_id || current_user.admin?
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
     @answers = current_user.answered_answer
     @answers.each do |answer|
       @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
@@ -44,22 +47,15 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    users = User.all
-    managers = users.manager
-    executives = users.executive
-    managers.push(executives)
-    # flettenメソッドで配列in配列状態を融合させてあげている
-    @superiors = managers.flatten
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.admin?
+    set_superiors
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
-    @users = User.all
-    managers = @users.manager
-    executives = @users.executive
-    managers.push(executives)
-    @superiors = managers.flatten
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
+    set_superiors
   end
 
   # POST /users
@@ -68,11 +64,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        login(user_params[:email], user_params[:password])
-        format.html { redirect_to new_user_path, notice: 'ユーザー作成しました' }
+        format.html { redirect_to new_user_session_path, notice: 'ユーザー作成しました' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        set_superiors
+        format.html { render :new}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -86,6 +82,7 @@ class UsersController < ApplicationController
         format.html { redirect_to ({action:'index'}), notice: 'ユーザー情報を編集しました' }
         format.json { render :show, status: :ok, location: @user }
       else
+        set_superiors
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -104,6 +101,13 @@ class UsersController < ApplicationController
   end
 
   private
+    def set_superiors
+      users = User.all
+      managers = users.manager
+      executives = users.executive
+      managers.push(executives)
+      @superiors = managers.flatten
+    end
     # Use callbacks to share common setup or constraints between actions.
     # 詳細リンクに必要
     def set_user

@@ -1,4 +1,6 @@
 ja:
+  activerecord:
+  models:
   attributes:
     email: メールアドレス
     password: パスワード
@@ -197,8 +199,3 @@ ja:
       long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %z'
       short: ! '%y/%m/%d %H:%M'
     pm: 午後
-  banken:
-    default: 'You cannot perform this action.'
-    posts_loyalty:
-      update?: 'You cannot edit this post!'
-      create?: 'You cannot create posts!'

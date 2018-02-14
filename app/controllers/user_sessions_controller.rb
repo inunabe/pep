@@ -3,7 +3,6 @@ class UserSessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
   # ログインしないとdestroyできない
   def index
-    redirect_to
   end
   def new
     @user = User.new

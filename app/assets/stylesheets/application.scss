@@ -1,7 +1,7 @@
 @import "materialize/components/color";
 $primary-color: color("green", "lighten-1") !default;
-@import 'materialize';
-
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import '*';
 
 // フォント指定
