@@ -23,14 +23,13 @@
         </tr>
         <tr>
           <td class="question_alternative-rate">
-            評価ポイント：<%= answer.rate %> &emsp;<%= @question_alternative.text %>
+            評価ポイント：<%= answer.rate %>
           </td>
           <td>
+            <% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)%>
+            <%= question_alternative.text %>
           </td>
         </tr>
       <% end %>
-        <tr class="evaluation_point">
-          <td>合計　：　<%=%></td><td></td>
-        </tr>
     </tbody>
   </table>

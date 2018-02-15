@@ -6,21 +6,20 @@
 </div>
   <table class="bordered highlight answer_table">
     <tbody>
-      <% @answers.each_with_index do |answer,i| %>
+      <% @answers.each do |answer| %>
         <tr>
           <td colspan="2" class="question-text">
-            <%= "#{i + 1}" %> ： <%= answer.question.text %>
+            <%= answer.question.text %>
           </td>
         </tr>
         <tr>
           <td class="question_alternative-rate">
-            評価ポイント：<%= answer.rate %> &emsp;<%= @question_alternative.text %>
+            評価ポイント：<%= answer.rate %>
           </td>
-          <td></td>
-        </tr>
+          <td>
+            <% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)%>
+            <%= question_alternative.text %>
+          </td>
       <% end %>
-        <tr class="evaluation_point">
-          <td>合計　：　<%=%></td><td></td>
-        </tr>
     </tbody>
   </table>
