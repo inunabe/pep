@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
     if current_user.nomal?
       @answers = current_user.answered_answer
     elsif current_user.manager?
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def mypage
     @user = User.find(params[:id])
-    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
     @answers = current_user.answered_answer
   end
 
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
     set_superiors
   end
 
