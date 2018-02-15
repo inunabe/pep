@@ -14,8 +14,6 @@ class AnswersController < ApplicationController
     question_ids_rates.each do |question_id,rate|
       Answer.create(answering_user_id:current_user.id,question_id:question_id,rate:rate, answered_user_id:params[:answered_user_id])
     end
-
-
     redirect_to "/users/#{current_user.id}/subordinate_index",notice:"回答しました"
   end
 
