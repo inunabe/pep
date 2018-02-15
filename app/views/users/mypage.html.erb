@@ -4,17 +4,23 @@
 <div class="table-title center-align">
   <%=current_user.superior_user.name %> さんからの評価
 </div>
-<table class="bordered highlight answer_table">
-  <tbody >
-    <% @answers.each_with_index do |answer,i| %>
-      <tr>
-        <td class="question-text" ><%= "#{i+1}" %> ： <%= answer.question.text %></td>
-      </tr>
-      <tr>
-        <td class="question_alternative-text">
-          評価ポイント：<%= answer.rate %> &emsp; <%= @question_alternative.text %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="bordered highlight answer_table">
+    <tbody>
+      <% @answers.each_with_index do |answer,i| %>
+        <tr>
+          <td colspan="2" class="question-text">
+            <%= "#{i + 1}" %> ： <%= answer.question.text %>
+          </td>
+        </tr>
+        <tr>
+          <td class="question_alternative-rate">
+            評価ポイント：<%= answer.rate %> &emsp;<%= @question_alternative.text %>
+          </td>
+          <td></td>
+        </tr>
+      <% end %>
+        <tr class="evaluation_point">
+          <td>合計　：　<%=%></td><td></td>
+        </tr>
+    </tbody>
+  </table>

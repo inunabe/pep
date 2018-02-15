@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     @answers = current_user.answered_answer
     @answers.each do |answer|
       @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
+      answer.rate * answer.question.weight
     end
   end
 
