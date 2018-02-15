@@ -2,9 +2,12 @@
   <div class="row">
     <form class="col s12">
       <div class= row>
-        <div class="input-field col s12">
+        <div class="input-field col s8">
           <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
           <%= f.label :質問項目 %><br>
+        </div>
+        <div class="input-field col s4">
+
         </div>
       </div>
   <%= f.fields_for :question_alternatives do |fb| %>

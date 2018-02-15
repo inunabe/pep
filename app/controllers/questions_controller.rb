@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   def new
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.admin?
     @question = Question.new
     5.times {
       @question.question_alternatives.build
@@ -17,6 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.admin?
     @question = Question.find(params[:id])
   end
 

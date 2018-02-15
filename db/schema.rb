@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202141109) do
+ActiveRecord::Schema.define(version: 20180215003509) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "answering_user_id", limit: 4
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180202141109) do
     t.text     "text",       limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "weight",     limit: 4
   end
 
   create_table "users", force: :cascade do |t|
