@@ -26,18 +26,12 @@ class UsersController < ApplicationController
       @answered_user = User.find(params[:id])
       @answering_user = @answered_user.superior_user
     end
-    @answers.each do |answer|
-      @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
-    end
   end
 
   def mypage
     @user = User.find(params[:id])
     redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || @user.admin?
     @answers = current_user.answered_answer
-    @answers.each do |answer|
-      @question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)
-    end
   end
 
 # 部下一覧を表示させる

@@ -17,12 +17,17 @@
     <tbody>
       <% @answers.each_with_index do |answer,i| %>
         <tr>
-        <td class="question-text">
-          <%= "#{i + 1}" %> ： <%= answer.question.text %></td>
+          <td colspan="2" class="question-text">
+            <%= "#{i + 1}" %> ： <%= answer.question.text %>
+          </td>
         </tr>
         <tr>
-          <td class="question_alternative-text">
-            評価ポイント：<%= answer.rate %> &emsp; <%= @question_alternative.text %>
+          <td class="question_alternative-rate">
+            評価ポイント：<%= answer.rate %>
+          </td>
+          <td>
+            <% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)%>
+            <%= question_alternative.text %>
           </td>
         </tr>
       <% end %>
