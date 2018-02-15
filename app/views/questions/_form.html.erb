@@ -1,13 +1,13 @@
-<%= form_for @question ,class: "col s12" do |f| %>
-  <div class="row">
-    <form class="col s12">
+<%= form_for (@question) ,class: "col s12" do |f| %>
       <div class= row>
         <div class="input-field col s8">
-          <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
+          <i class="material-icons prefix">live_help</i>
           <%= f.label :質問項目 %><br>
+          <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
         </div>
         <div class="input-field col s4">
-
+          <%= f.label :ウェイト %><br>
+          <%= f.select :weight,{"1": 1,"2": 2,"3": 3} %>
         </div>
       </div>
   <%= f.fields_for :question_alternatives do |fb| %>
@@ -22,9 +22,6 @@
       </div>
     </div>
   <% end %>
-    </form>
-</div>
-
     <div class="actions right-align">
       <%= f.submit "登録" ,:class=>"btn btn-large btn-question waves-effect waves-light" %>
     </div>

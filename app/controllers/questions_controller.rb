@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
 
   def create
     Question.create(question_params)
-    redirect_to action: :new
+    redirect_to new_question_path, notice:"質問を登録しました"
   end
 
   def index
@@ -25,18 +25,18 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update(question_params)
-    redirect_to questions_path, notice: "質問項目を編集しました"
+    redirect_to questions_path, notice: "質問を編集しました"
   end
 
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to questions_path, notice: "質問項目を消去しました"
+    redirect_to questions_path, notice: "質問を消去しました"
   end
 
   private
   def question_params
-    params.require(:question).permit(:text,question_alternatives_attributes: [:text,:rate])
+    params.require(:question).permit(:text,:weight,question_alternatives_attributes: [:text,:rate])
     # params.require(:モデル名).permit(:カラム名)
   end
 end
