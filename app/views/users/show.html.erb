@@ -31,8 +31,8 @@
             <%= question_alternative.text %>
           </td>
         </tr>
-          <% sum = answer.rate * answer.question.weight%>
-          <% array << sum %>
+          <% rate_weight = answer.rate * answer.question.weight%>
+          <% array << rate_weight %>
       <% end %>
         <tr class="rate_weight_sum">
           <td colspan="2">合計(×ウェイト) = <%= array.sum %></td>

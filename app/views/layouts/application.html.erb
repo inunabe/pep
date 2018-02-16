@@ -33,9 +33,6 @@
                 <li><%= link_to "ユーザー登録", new_user_path %></li>
                 <li><%= link_to "質問項目登録", new_question_path %></li>
                 <li><%= link_to "質問項目一覧", questions_path %></li>
-                <% if current_user.answered_answer.present? %>
-                <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
-                <% end %>
 
               <% elsif current_user && current_user.nomal? %>
                 <% if current_user.answered_answer.present? %>
