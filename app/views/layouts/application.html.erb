@@ -31,7 +31,6 @@
 
               <% elsif current_user && current_user.admin? %>
                 <li><%= link_to "ユーザー登録", new_user_path %></li>
-                <li><%= link_to "ユーザー一覧", users_path %></li>
                 <li><%= link_to "質問項目登録", new_question_path %></li>
                 <li><%= link_to "質問項目一覧", questions_path %></li>
                 <% if current_user.answered_answer.present? %>
@@ -50,12 +49,13 @@
 
               <ul class="right">
                 <% if current_user %>
+                   <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">menu</i></a></li>
+                <% end %>
+                <% if current_user %>
                   <li><%= link_to "ログアウト", :logout , method: :post %></li>
                   <li><%= link_to "#{current_user.name}", edit_user_path(current_user) %></li>
                 <% end %>
-                <% if current_user %>
-                   <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">menu</i></a></li>
-                <% end %>
+
               </ul>
           </div>
         </nav>
