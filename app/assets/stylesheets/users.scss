@@ -55,6 +55,16 @@
 .question_alternative-text {
   text-align: left;
 }
+.rate_weight_sum {
+  height: 100px;
+  background: $primary-color;
+  & td {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: $primary-color;
+  }
+}
 
 .answer_table tbody .question-text{
   font-size: 17px;

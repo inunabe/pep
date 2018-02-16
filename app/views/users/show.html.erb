@@ -15,6 +15,7 @@
 </div>
   <table class="bordered highlight answer_table">
     <tbody>
+      <% array = [] %>
       <% @answers.each_with_index do |answer,i| %>
         <tr>
           <td colspan="2" class="question-text">
@@ -30,6 +31,11 @@
             <%= question_alternative.text %>
           </td>
         </tr>
+          <% sum = answer.rate * answer.question.weight%>
+          <% array << sum %>
       <% end %>
+        <tr class="rate_weight_sum">
+          <td colspan="2">合計(×ウェイト) = <%= array.sum %></td>
+        </tr>
     </tbody>
   </table>
