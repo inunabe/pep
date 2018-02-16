@@ -19,7 +19,7 @@
             <ul id="dropdown1" class="dropdown-content">
               <% if current_user && current_user.executive? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-                <% if current_user.answered_answers.present? %>
+                <% if current_user.answered_answer.present? %>
                   <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
                 <% end %>
 
