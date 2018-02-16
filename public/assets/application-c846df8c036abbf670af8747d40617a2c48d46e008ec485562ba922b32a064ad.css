@@ -12814,6 +12814,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /* line 27, /Users/fukuei/projects/pep/app/assets/stylesheets/answers.scss */
 .btn-answer input {
   outline: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/flash.scss */
@@ -12851,6 +12853,13 @@ body header nav .left-logo {
   color: #66BB6A !important;
 }
 
+/* line 17, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  font-size: 30px;
+  height: 64px;
+  line-height: 64px;
+}
+
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 .actions .btn-question {
   background-color: #66BB6A;
@@ -12868,9 +12877,11 @@ body header nav .left-logo {
 /* line 14, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 .btn-question input {
   outline: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* line 19, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 21, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 textarea.materialize-textarea {
   padding: 0 !important;
 }
@@ -12938,6 +12949,8 @@ textarea.materialize-textarea {
 /* line 16, /Users/fukuei/projects/pep/app/assets/stylesheets/user_sessions.scss */
 .btn-login input {
   outline: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* line 2, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
@@ -12960,9 +12973,11 @@ textarea.materialize-textarea {
 /* line 17, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .btn-register input {
   outline: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* line 23, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 25, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .bordered tbody tr td a {
   color: #66BB6A;
   opacity: 1;
@@ -12972,43 +12987,56 @@ textarea.materialize-textarea {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 31, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 33, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .bordered tbody tr td a:hover {
   opacity: 0.6;
 }
 
-/* line 35, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 37, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .user-name {
   text-align: center;
 }
 
-/* line 38, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 40, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .user-email {
   text-align: center;
 }
 
-/* line 41, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 43, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .user-link {
   text-align: center;
 }
 
-/* line 46, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 48, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .table-title {
   font-size: 25px;
   margin-bottom: 30px;
 }
 
-/* line 50, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 52, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .question_alternative-rate {
   text-align: cener;
 }
 
-/* line 53, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 55, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .question_alternative-text {
   text-align: left;
 }
 
-/* line 57, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 58, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.rate_weight_sum {
+  height: 100px;
+  background: #66BB6A;
+}
+/* line 61, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.rate_weight_sum td {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #66BB6A;
+}
+
+/* line 69, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .answer_table tbody .question-text {
   font-size: 17px;
   text-align: center;
