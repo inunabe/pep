@@ -19,25 +19,32 @@
             <ul id="dropdown1" class="dropdown-content">
               <% if current_user && current_user.executive? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-                <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
+                <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
+                <% if current_user.answered_answers.present? %>
+                  <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
+                <% end %>
 
               <% elsif current_user && current_user.manager? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user) %></li>
-                <li><%= link_to "登録情報編集", edit_user_path(current_user) %></li>
-                <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
+                <li><%= link_to "ユーザー情報編集", edit_user_path(current_user) %></li>
+                <% if current_user.answered_answer.present? %>
+                  <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
+                <% end %>
 
               <% elsif current_user && current_user.admin? %>
                 <li><%= link_to "ユーザー登録", new_user_path %></li>
                 <li><%= link_to "ユーザー一覧", users_path %></li>
-                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
+                <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
                 <li><%= link_to "質問項目登録", new_question_path %></li>
                 <li><%= link_to "質問項目一覧", questions_path %></li>
+                <% if current_user.answered_answer.present? %>
                 <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
+                <% end %>
 
               <% elsif current_user && current_user.nomal? %>
-                <li><%= link_to "登録情報編集", edit_user_path(current_user.id) %></li>
-                <li><%= link_to "評価閲覧", user_path(current_user)%></li>
+                <% if current_user.answered_answer.present? %>
+                  <li><%= link_to "評価閲覧", user_path(current_user)%></li>
+                <% end %>
               <% end %>
 
             </ul>
@@ -45,12 +52,13 @@
                 <a href="<%= users_path %>" class="brand-logo left-logo left-align">Fukuei</a>
 
               <ul class="right">
-              <% if current_user %>
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
-              <% end %>
-              <% if current_user %>
-                <li><%= link_to "ログアウト", :logout , method: :post %></li>
-              <% end %>
+                <% if current_user %>
+                  <li><%= link_to "ログアウト", :logout , method: :post %></li>
+                  <li><%= link_to "#{current_user.name}", edit_user_path(current_user) %></li>
+                <% end %>
+                <% if current_user %>
+                   <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">menu</i></a></li>
+                <% end %>
               </ul>
           </div>
         </nav>

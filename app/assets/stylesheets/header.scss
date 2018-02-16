@@ -14,3 +14,8 @@ body header nav {
   color: $primary-color !important;
 }
 
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  font-size: 30px;
+  height: 64px;
+  line-height: 64px;
+}

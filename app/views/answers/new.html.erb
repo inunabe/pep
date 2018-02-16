@@ -4,9 +4,8 @@
 
   <div class="contents row answer-table ">
     <!-- テーブルここから -->
+  <%= form_for (@answer) do |f| %>
     <table class="bordered highlight">
-      <%= form_for (@answer) do |f| %>
-        <tbody>
           <% @questions.each_with_index do |question, i|%>
             <tr>
               <td class="question-bold question_id"></td><td colspan=3 class="question-bold"><%= question.text %></td><td></td>
@@ -30,11 +29,10 @@
               </td>
               <td>
                 <%= f.radio_button 'rate', 4, name:"rate#{i}", id:"rate4_#{i}", class:"with-gap"%>
-                <label for="rate4_<%= i %>"><%= question.question_alternatives.find_by(rate: 4).text %>
-              </td></label>
+                <label for="rate4_<%= i %>"><%= question.question_alternatives.find_by(rate: 4).text %></label>
+              </td>
             </tr>
           <% end %>
-        </tbody>
     </table>
     <!-- テーブルここまで -->
         <div class="actions right-align">
@@ -42,6 +40,6 @@
           <%= hidden_field_tag :answered_user_id, @user.id %>
           <%= f.submit '回答', :class=>"btn btn-large btn-answer waves-effect waves-light" %>
         </div>
-      <% end %>
+  <% end %>
   </div>
 
