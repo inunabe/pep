@@ -48,7 +48,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
+    @user = User.find(params[:id])
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id || current_user.admin?
     set_superiors
   end
 
@@ -58,7 +59,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to new_user_session_path, notice: 'ユーザー作成しました' }
+        format.html { redirect_to ({action:'index'}), notice: 'ユーザー作成しました' }
         format.json { render :show, status: :created, location: @user }
       else
         set_superiors
