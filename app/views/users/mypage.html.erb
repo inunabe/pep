@@ -13,15 +13,13 @@
             <%= answer.question.text %>
           </td>
         </tr>
-        <tr>
-          <td class="question_alternative-rate">
-            評価ポイント：<%= answer.rate %>
-          </td>
-          <td>
+        <tr class="question_alternative-text">
             <% question_alternative = QuestionAlternative.find_by(question_id: answer.question_id,rate: answer.rate)%>
+          <td colspan="2">
             <%= question_alternative.text %>
           </td>
-          <% rate_weight = answer.rate * answer.question.weight %>
+        </tr>
+          <% rate_weight = answer.rate * answer.question.weight%>
           <% array << rate_weight %>
       <% end %>
         <tr class="rate_weight_sum">

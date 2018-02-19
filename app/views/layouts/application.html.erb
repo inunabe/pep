@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fukuei-Personnel evaluation program-</title>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -33,6 +32,7 @@
                 <li><%= link_to "ユーザー登録", new_user_path %></li>
                 <li><%= link_to "質問項目登録", new_question_path %></li>
                 <li><%= link_to "質問項目一覧", questions_path %></li>
+                  <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
 
               <% elsif current_user && current_user.nomal? %>
                 <% if current_user.answered_answer.present? %>
