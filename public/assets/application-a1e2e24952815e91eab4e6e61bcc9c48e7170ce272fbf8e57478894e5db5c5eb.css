@@ -13013,22 +13013,16 @@ textarea.materialize-textarea {
   margin-bottom: 30px;
 }
 
-/* line 52, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
-.question_alternative-rate {
-  text-align: cener;
+/* line 53, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.question_alternative-text td {
+  text-align: center;
 }
 
-/* line 55, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
-.question_alternative-text {
-  text-align: left;
-}
-
-/* line 58, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 56, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .rate_weight_sum {
   height: 100px;
-  background: #66BB6A;
 }
-/* line 61, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 58, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .rate_weight_sum td {
   text-align: center;
   font-weight: bold;
@@ -13036,11 +13030,17 @@ textarea.materialize-textarea {
   color: #66BB6A;
 }
 
-/* line 69, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 66, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .answer_table tbody .question-text {
   font-size: 17px;
   text-align: center;
   font-weight: bold;
+}
+
+/* line 73, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+#fukuei-map {
+  width: 600px;
+  height: 600px;
 }
 
 /* line 8, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
