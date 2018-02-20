@@ -13038,9 +13038,22 @@ textarea.materialize-textarea {
 }
 
 /* line 73, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.map-title {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #66BB6A;
+}
+
+/* line 78, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.postal-number {
+  font-weight: bold;
+}
+
+/* line 81, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 #fukuei-map {
-  width: 600px;
-  height: 600px;
+  margin-top: 30px;
+  width: 100%;
+  height: 300px;
 }
 
 /* line 8, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
