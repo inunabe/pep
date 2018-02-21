@@ -11562,10 +11562,6 @@ return jQuery;
   }
 
 })( jQuery );
-$(document).ready(function() {
-  $(".dropdown-button").dropdown();
-  $('select').material_select();
-});
 /*!
  * Materialize v0.100.2 (http://materializecss.com)
  * Copyright 2014-2017 Materialize
@@ -21588,6 +21584,35 @@ if (Vel) {
     $.error('Method ' + methodOrOptions + ' does not exist on jQuery.tap-target');
   };
 })(jQuery);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+$(document).ready(function() {
+  $(".dropdown-button").dropdown();
+  $('select').material_select();
+});
+
+function initMap() {
+        var uluru = {lat: 34.719735, lng: 135.418066};
+        var map = new google.maps.Map(document.getElementById('fukuei-map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+}
+;
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

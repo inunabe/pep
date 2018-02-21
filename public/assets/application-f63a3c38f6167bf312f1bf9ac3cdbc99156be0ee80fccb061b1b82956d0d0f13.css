@@ -12834,6 +12834,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   padding: 10px 0;
 }
 
+/* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/footer.scss */
+footer {
+  background-color: #66BB6A;
+  opacity: 0.9;
+}
+
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/header.scss */
 body header nav {
   background-color: #66BB6A;
@@ -12881,9 +12887,18 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
   height: 100%;
 }
 
-/* line 21, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+/* line 20, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+.bordered tbody .questionindex-text a {
+  color: #666666;
+}
+/* line 22, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
+.bordered tbody .questionindex-text a:hover {
+  text-decoration: underline;
+}
+
+/* line 27, /Users/fukuei/projects/pep/app/assets/stylesheets/questions.scss */
 textarea.materialize-textarea {
-  padding: 0 !important;
+  padding: 0;
 }
 
 /* line 1, /Users/fukuei/projects/pep/app/assets/stylesheets/roots.scss */
@@ -12981,11 +12996,11 @@ textarea.materialize-textarea {
 .bordered tbody tr td a {
   color: #66BB6A;
   opacity: 1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 /* line 33, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .bordered tbody tr td a:hover {
@@ -12993,36 +13008,44 @@ textarea.materialize-textarea {
 }
 
 /* line 37, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
-.user-name {
+.bordered tbody .user-name {
   text-align: center;
 }
+/* line 39, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.bordered tbody .user-name a {
+  color: #666666;
+}
+/* line 41, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.bordered tbody .user-name a:hover {
+  text-decoration: underline;
+}
 
-/* line 40, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 46, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .user-email {
-  text-align: center;
+  text-align: right;
 }
 
-/* line 43, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 49, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .user-link {
-  text-align: center;
+  text-align: right;
 }
 
-/* line 48, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 54, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .table-title {
   font-size: 25px;
   margin-bottom: 30px;
 }
 
-/* line 53, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 59, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .question_alternative-text td {
   text-align: center;
 }
 
-/* line 56, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 62, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .rate_weight_sum {
   height: 100px;
 }
-/* line 58, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 64, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .rate_weight_sum td {
   text-align: center;
   font-weight: bold;
@@ -13030,28 +13053,32 @@ textarea.materialize-textarea {
   color: #66BB6A;
 }
 
-/* line 66, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 72, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .answer_table tbody .question-text {
   font-size: 17px;
   text-align: center;
   font-weight: bold;
 }
 
-/* line 73, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 79, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .map-title {
-  margin-top: 10px;
   font-size: 30px;
   color: #66BB6A;
 }
 
-/* line 78, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 83, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+.fukuei-address {
+  font-size: 17px;
+}
+
+/* line 86, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 .postal-number {
   font-weight: bold;
 }
 
-/* line 81, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
+/* line 89, /Users/fukuei/projects/pep/app/assets/stylesheets/users.scss */
 #fukuei-map {
-  margin-top: 30px;
+  margin: 30px 0 15px 0;
   width: 100%;
   height: 300px;
 }
@@ -13059,32 +13086,31 @@ textarea.materialize-textarea {
 /* line 8, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 body {
   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
-/* line 11, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
-body {
-  height: 100%;
+  color: #666666;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background: #FCFCFC;
 }
 
-/* line 15, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+/* line 16, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 .contents {
-  min-height: 100%;
+  flex: 1 0 auto;
 }
 
-/* line 18, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+/* line 19, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 .container {
   padding-top: 64px;
   padding-bottom: 100px;
 }
 
-/* line 23, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+/* line 24, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 .page-title h3 {
   font-size: 35px;
   color: #66BB6A;
 }
 
-/* line 29, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
+/* line 30, /Users/fukuei/projects/pep/app/assets/stylesheets/application.scss */
 td {
   font-size: 17px;
 }
