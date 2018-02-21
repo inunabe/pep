@@ -17,4 +17,18 @@ class AnswersController < ApplicationController
     redirect_to "/users/#{current_user.id}/subordinate_index",notice:"回答しました"
   end
 
+  # def edit
+  #   @questions = Question.all
+  #   answeres = Answer.where(answered_user_id: params[:user_id])
+
+  #   subordinate_answers_ids = []
+  #   answeres.each do |answer|
+  #     subordinate_answers_ids << answer.id
+  #   end
+  #   @subordinate_answers_ids = subordinate_answers_ids
+  #   @user = User.find(params[:user_id])
+  #   @answer = Answer.new(answer_user_id: Answer.find(answer_user.id))
+  #   binding.pry
+  # end
+
 end

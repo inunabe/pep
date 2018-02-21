@@ -17,7 +17,9 @@
   height: 100%;
 }
 
-
-textarea.materialize-textarea{
-  padding: 0 !important;
+.bordered tbody .questionindex-text a{
+  color: #666666 ;
+  &:hover {
+  text-decoration: underline;
+  }
 }

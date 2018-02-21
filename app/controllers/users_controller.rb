@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 
 # 部下一覧を表示させる
   def subordinate_index
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.admin? || current_user.manager? || current_user.executive?
     @subordinates = current_user.subordinate_users
   end
 

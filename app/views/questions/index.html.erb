@@ -2,7 +2,7 @@
     <h3>質問項目一覧</h3>
   </div>
   <div class="contents row questions-table ">
-    <table class="bordered highlight">
+    <table class="bordered">
     <!-- 表の頭の部分 -->
       <thead >
         <tr>
@@ -15,8 +15,7 @@
         <tbody>
         <% @questions.each do |question|%>
         <tr>
-        <td><%= question.text %></td>
-        <td><%= link_to "編集", edit_question_path(question) %></td>
+        <td class="questionindex-text"><%= link_to "#{question.text}", edit_question_path(question)%></td>
         <td><%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
         </tr>
         <% end %>

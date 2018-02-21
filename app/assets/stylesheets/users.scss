@@ -25,11 +25,11 @@
 .bordered tbody tr td a{
   color: $primary-color;
   opacity: 1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   &:hover {
     opacity: 0.6;
   }
@@ -38,10 +38,10 @@
   text-align: center;
 }
 .user-email {
-  text-align: center;
+  text-align: right;
 }
 .user-link {
-  text-align: center;
+  text-align: right;
 }
 
 // 評価閲覧ページ

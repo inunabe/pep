@@ -6,7 +6,7 @@ $(document).ready(function() {
 function initMap() {
         var uluru = {lat: 34.719735, lng: 135.418066};
         var map = new google.maps.Map(document.getElementById('fukuei-map'), {
-          zoom: 19,
+          zoom: 17,
           center: uluru
         });
         var marker = new google.maps.Marker({
