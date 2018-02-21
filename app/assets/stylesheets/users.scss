@@ -34,8 +34,14 @@
     opacity: 0.6;
   }
 }
-.user-name {
+.bordered tbody .user-name {
   text-align: center;
+  & a {
+    color: #666666 ;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 .user-email {
   text-align: right;

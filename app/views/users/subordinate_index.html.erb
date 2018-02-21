@@ -8,16 +8,12 @@
     <tbody>
       <% @subordinates.each do |subordinate| %>
         <tr>
-          <% if subordinate.answered_answer.present? %>
-          <td class="user-name"><%= link_to "#{subordinate.name}", "/answers/edit/#{subordinate.id}" %></td>
-        <% else %>
           <td class="user-name"><%= subordinate.name %></td>
-        <% end %>
           <td><%= subordinate.email %></td>
         <% unless subordinate.answered_answer.present? %>
           <td><%= link_to '評価する', "/answers/new/#{subordinate.id}" %></td>
         <% else %>
-        <td></td>
+        <td><%= link_to "評価閲覧", user_path(subordinate)%></td>
         <% end %>
       <% end %>
     </tbody>

@@ -4,7 +4,7 @@
 
 <div class="contents row answer-table ">
     <!-- テーブルここから -->
-  <%= form_for (@answers) do |f| %>
+  <%= form_for (@subordinate_answers_ids) do |f| %>
     <table class="bordered highlight">
           <% @questions.each_with_index do |question, i|%>
             <tr>
