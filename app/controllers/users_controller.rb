@@ -20,8 +20,8 @@ class UsersController < ApplicationController
       @self_answers = @user.answering_answers
       @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id)
     elsif current_user.executive?
-      @answers = Answer.where(answered_user_id:params[:id])
-      @subordinate = User.find(params[:id])
+      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id)
+      @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id)
     elsif current_user.admin?
       @answers = Answer.where(answered_user_id:params[:id])
       @answered_user = User.find(params[:id])
