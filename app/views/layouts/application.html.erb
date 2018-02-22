@@ -36,7 +36,8 @@
                 <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
 
               <% elsif current_user && current_user.nomal? %>
-                <% if current_user.answered_answer.present? %>
+                  <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
+                <% if current_user.answering_answers.present? %>
                   <li><%= link_to "評価閲覧", user_path(current_user)%></li>
                 <% end %>
               <% end %>
