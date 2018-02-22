@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
     if current_user.nomal?
-      @answers = current_user.answered_answer
+      @self_answers = current_user.answering_answers
+      @answers = Answer.where(answering_user: current_user.superior_user.id)
     elsif current_user.manager?
       @answers = current_user.answering_answers.where(answered_user_id:params[:id])
       @subordinate = User.find(params[:id])
