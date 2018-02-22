@@ -23,7 +23,8 @@ class UsersController < ApplicationController
       @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id)
       @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id)
     elsif current_user.admin?
-      @answers = Answer.where(answered_user_id:params[:id])
+      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id)
+      @answers = Answer.where(answering_user_id: @user.superior_user.id,answered_user_id: @user.id)
       @answered_user = User.find(params[:id])
       @answering_user = @answered_user.superior_user
     end
@@ -32,7 +33,8 @@ class UsersController < ApplicationController
   def mypage
     @user = User.find(params[:id])
     redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
-    @answers = current_user.answered_answer
+    @self_answers = Answer.where(answering_user_id: current_user.id,answered_user_id: current_user.id)
+    @answers = Answer.where(answering_user_id: current_user.superior_user.id,answered_user_id: current_user.id)
   end
 
 # 部下一覧を表示させる

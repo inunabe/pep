@@ -36,6 +36,8 @@
                 <li><%= link_to "質問項目登録", new_question_path %></li>
                 <li><%= link_to "質問項目一覧", questions_path %></li>
                 <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
+                <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
+
 
               <% elsif current_user && current_user.nomal? %>
                   <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>

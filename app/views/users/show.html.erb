@@ -2,12 +2,10 @@
   <h3>評価結果</h3>
 </div>
 
-
-
 <div class="self-answer-table center-align">
   <% if current_user.nomal? %>
     <%= current_user.name %> さんの自己評価
-  <% elsif current_user.manager? || current_user.executive?%>
+  <% elsif current_user.manager? || current_user.executive? || current_user.admin? %>
     <%= @user.name %> さんの自己評価
   <% end%>
 </div>

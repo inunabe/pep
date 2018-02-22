@@ -1,16 +1,53 @@
 <div class="page-title">
   <h3>評価結果</h3>
 </div>
+
+
 <div class="self-answer-table center-align">
-  <%=current_user.superior_user.name %> さんからの評価
+  <% if current_user.admin? %>
+    <%= current_user.name %> さんの自己評価
+  <% elsif current_user.manager? || current_user.executive?%>
+    <%= @user.name %> さんの自己評価
+  <% end%>
+</div>
+
+  <table class="bordered highlight answer_table">
+    <tbody>
+      <% array = [] %>
+      <% @self_answers.each_with_index do |self_answer,i| %>
+        <tr>
+          <td colspan="2" class="question-text">
+            <%= "#{i + 1}" %> ： <%= self_answer.question.text %>
+          </td>
+        </tr>
+        <tr class="question_alternative-text">
+            <% question_alternative = QuestionAlternative.find_by(question_id: self_answer.question_id,rate: self_answer.rate)%>
+          <td colspan="2">
+            <%= question_alternative.text %>
+          </td>
+        </tr>
+          <% rate_weight = self_answer.rate * self_answer.question.weight%>
+          <% array << rate_weight %>
+      <% end %>
+        <tr class="rate_weight_sum">
+          <td colspan="2">合計(×ウェイト) = <%= array.sum %></td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+<div class="superior-answer-table center-align">
+    <%= current_user.superior_user.name%> さんから<br>
+    <%= current_user.name %> さんへの評価
 </div>
   <table class="bordered highlight answer_table">
     <tbody>
       <% array = [] %>
-      <% @answers.each do |answer| %>
+      <% @answers.each_with_index do |answer,i| %>
         <tr>
           <td colspan="2" class="question-text">
-            <%= answer.question.text %>
+            <%= "#{i + 1}" %> ： <%= answer.question.text %>
           </td>
         </tr>
         <tr class="question_alternative-text">
