@@ -50,9 +50,13 @@
   text-align: right;
 }
 // 評価閲覧ページ
-.table-title {
+.self-answer-table {
   font-size: 25px;
-  margin-bottom: 30px;
+  margin: 30px 0;
+}
+.superior-answer-table {
+  font-size: 25px;
+  margin: 100px 0 30px 0;
 }
 
 .question_alternative-text td{
