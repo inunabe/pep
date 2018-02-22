@@ -7,6 +7,8 @@
 <div class="self-answer-table center-align">
   <% if current_user.nomal? %>
     <%= current_user.name %> さんの自己評価
+  <% elsif current_user.manager? || current_user.executive?%>
+    <%= @user.name %> さんの自己評価
   <% end%>
 </div>
 
@@ -40,9 +42,11 @@
   <% if current_user.nomal? %>
     <%= current_user.superior_user.name %> さんからの評価
   <% elsif current_user.manager?%>
-    <%= @subordinate.name %> さんへの評価
+    <%= current_user.name %> さんから<br>
+    <%= @user.name %> さんへの評価
   <% elsif current_user.executive? %>
-    <%= @subordinate.name %> さんへの評価
+    <%= current_user.name %> さんから<br>
+    <%= @user.name %> さんへの評価
   <% elsif current_user.admin? %>
     <%= @answering_user.name %> さんから<br>
     <%= @answered_user.name %> さんへの評価

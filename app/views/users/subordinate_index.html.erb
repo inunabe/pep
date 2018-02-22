@@ -1,7 +1,7 @@
 <div class="page-title">
   <h3>部下一覧</h3>
 </div>
-<div class="table-title center-align">
+<div class="subordinate-table center-align">
   <%= current_user.name%> さんの部下一覧
 </div>
   <table class="bordered highlight">
@@ -10,7 +10,7 @@
         <tr>
           <td class="user-name"><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
-        <% unless subordinate.answered_answer.present? %>
+        <% unless subordinate.answered_answer.present?%>
           <td><%= link_to '評価する', "/answers/new/#{subordinate.id}" %></td>
         <% else %>
         <td><%= link_to "評価閲覧", user_path(subordinate)%></td>
