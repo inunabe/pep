@@ -25,6 +25,7 @@
 
               <% elsif current_user && current_user.manager? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user) %></li>
+                  <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
                 <% if current_user.answered_answer.present? %>
                   <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
                 <% end %>
