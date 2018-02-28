@@ -20,4 +20,6 @@ class User < ActiveRecord::Base
 
   has_many :answering_answers, class_name: 'Answer', foreign_key: :answering_user_id
   has_many :answered_answer, class_name: 'Answer', foreign_key: :answered_user_id
+
+  belongs_to :grade
 end

@@ -116,6 +116,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     # paramsハッシュ構造が二重になっている（paramsというハッシュの中にuserというバリューがあって、user自身もバリューを持っているparams=>{user=>{:email,:password,:name}}）
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :name, :role, :superior_id)
+      params.require(:user).permit(:email, :password, :password_confirmation, :name, :role, :superior_id, :grade_id)
     end
 end

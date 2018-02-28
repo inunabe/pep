@@ -3,6 +3,8 @@
 </div>
 
 <div class="self-answer-table center-align">
+  <%= current_user.grade.department.name %>
+  <%= current_user.grade.rank%> 等級<br>
   <% if current_user.nomal? %>
     <%= current_user.name %> さんの自己評価
   <% elsif current_user.manager? || current_user.executive? || current_user.admin? %>
