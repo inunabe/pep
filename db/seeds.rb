@@ -1,4 +1,4 @@
-equire "csv"
+require "csv"
 departments_csv = CSV.readlines("db/departments.csv")
 departments_csv.shift
 departments_csv.each do |row|
