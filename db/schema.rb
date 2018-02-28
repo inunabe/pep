@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228052024) do
+ActiveRecord::Schema.define(version: 20180228053548) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "answering_user_id", limit: 4
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20180228052024) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "grade_questions", force: :cascade do |t|
+    t.integer  "grade_id",    limit: 4
+    t.integer  "question_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "grade_questions", ["grade_id"], name: "index_grade_questions_on_grade_id", using: :btree
+  add_index "grade_questions", ["question_id"], name: "index_grade_questions_on_question_id", using: :btree
 
   create_table "grades", force: :cascade do |t|
     t.integer  "department_id", limit: 4
@@ -64,4 +74,6 @@ ActiveRecord::Schema.define(version: 20180228052024) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "grade_questions", "grades"
+  add_foreign_key "grade_questions", "questions"
 end
