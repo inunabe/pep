@@ -3,7 +3,19 @@
 </div>
 
 <div class="self-answer-table center-align">
-  <% if current_user.grade.present? %>
+  <% if @user.grade.present? && current_user.executive? %>
+    <%= @user.grade.department.name %>
+    <%= @user.grade.rank%> 等級 <br>
+  <% end %>
+  <% if @user.grade.present? && current_user.manager? %>
+    <%= @user.grade.department.name %>
+    <%= @user.grade.rank%> 等級 <br>
+  <% end %>
+  <% if @user.grade.present? && current_user.admin? %>
+    <%= @user.grade.department.name %>
+    <%= @user.grade.rank%> 等級 <br>
+  <% end %>
+  <% if current_user.grade.present? && current_user.nomal? %>
     <%= current_user.grade.department.name %>
     <%= current_user.grade.rank%> 等級<br>
   <% else %>

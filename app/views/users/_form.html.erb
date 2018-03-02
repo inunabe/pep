@@ -47,16 +47,16 @@
       <%= f.label :区分 %><br>
       <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"} %>
     </div>
+      <!-- セレクトボックス(上長登録) -->
+    <div class="input-field col s4">
+      <%= f.label :上長 %><br>
+      <%=f.select :superior_id, @superiors.map{|t| [t.name, t.id]}, :include_blank => true %>
+    </div>
   <!-- セレクトボックス(grade選択) -->
     <div class="input-field col s4">
       <%= f.label :部署_等級 %><br>
       <%= f.grouped_collection_select(:grade_id, Department.all, :grades, :name,:id, :rank, :prompt => "選択してください") %>
       <!-- f.grouped_collection_select(プロパティ名, オブジェクトの配列, タグを取得するメソッド, タグのラベル, valueの項目, テキストの項目 [, オプション]) -->
-    </div>
-  <!-- セレクトボックス(上長登録) -->
-    <div class="input-field col s4">
-      <%= f.label :上長 %><br>
-      <%=f.select :superior_id, @superiors.map{|t| [t.name, t.id]}, :include_blank => true %>
     </div>
 
   <!-- ここまで -->
