@@ -9,13 +9,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create(question_params)
-    grade_params[:grade_ids].each do |grade_id|
-      question.grade_questions.create(grade_id: grade_id) unless grade_id.empty?
-      # questionがgrade_questionとアソシエーションを組んでいるので、自動的に中間テーブルである
-      # grade_questionsテーブルにquestion_idが保存される。
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to new_question_path, notice:"質問を登録しました"
+    else
+      render :new
     end
-    redirect_to new_question_path, notice:"質問を登録しました"
   end
 
   def index
@@ -30,9 +29,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update(question_params)
-    # grade_params[:grade_ids].each do |grade_id|
-    #   @question.grade_questions.update(grade_id: grade_id) unless grade_id.empty?
-    # end
+
     redirect_to questions_path, notice: "質問を編集しました"
   end
 
@@ -44,10 +41,10 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:text,:weight,question_alternatives_attributes: [:text,:rate])
+    params.require(:question).permit(:text,:weight,{question_alternatives_attributes: [:text,:rate]}, {grade_ids: []})
     # params.require(:モデル名).permit(:カラム名)
   end
-  def grade_params
-    params.require(:grade).permit(grade_ids:[])
-  end
+  # def grade_params
+  #   params.require(:grade).permit({grade_ids:[]})
+  # end
 end

@@ -1,4 +1,16 @@
 <%= form_for (@question) ,class: "col s12" do |f| %>
+
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+       <h4><%= @question.errors.size %> 件のエラーがあります</h4>
+      <ul>
+      <% @question.errors.full_messages.each  do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class= row>
     <div class="input-field col s8">
       <i class="material-icons prefix">live_help</i>
@@ -31,7 +43,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= collection_check_boxes(:grade, :grade_ids, Grade.all, :id, :rank) do |grade| %>
+      <%= collection_check_boxes(:question, :grade_ids, Grade.all, :id, :rank) do |grade| %>
         <%= grade.label do %>
           <tr>
             <td><%= grade.object.department.name %></td>
