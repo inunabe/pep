@@ -1,16 +1,15 @@
 <%= form_for (@question) ,class: "col s12" do |f| %>
-      <div class= row>
-        <div class="input-field col s8">
-          <i class="material-icons prefix">live_help</i>
-          <%= f.label :質問項目 %><br>
-          <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
-        </div>
-        <div class="input-field col s4">
-          <%= f.label :ウェイト %><br>
-          <%= f.select :weight,{"1": 1,"2": 2,"3": 3} %>
-        </div>
-      </div>
-
+  <div class= row>
+    <div class="input-field col s8">
+      <i class="material-icons prefix">live_help</i>
+      <%= f.label :質問項目 %><br>
+      <%= f.text_area :text, id: "textarea1", class: "materialize-textarea" %>
+    </div>
+    <div class="input-field col s4">
+      <%= f.label :ウェイト %><br>
+      <%= f.select :weight,{"1": 1,"2": 2,"3": 3} %>
+    </div>
+  </div>
   <%= f.fields_for :question_alternatives do |fb| %>
     <div class="row">
       <div class="input-field col s8">
@@ -23,7 +22,27 @@
       </div>
     </div>
   <% end %>
-    <div class="actions right-align">
-      <%= f.submit "登録" ,:class=>"btn btn-large btn-question waves-effect waves-light" %>
-    </div>
+  <table class="question_grade_regist centered striped">
+    <thead>
+      <tr>
+          <th>部署名</th>
+          <th>等級</th>
+          <th>追加/除外</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= collection_check_boxes(:grade, :grade_ids, Grade.all, :id, :rank) do |grade| %>
+        <%= grade.label do %>
+          <tr>
+            <td><%= grade.object.department.name %></td>
+            <td><%= grade.object.rank %></td>
+            <td><%= grade.check_box %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="actions right-align">
+    <%= f.submit "登録" ,:class=>"btn btn-large btn-question waves-effect waves-light" %>
+  </div>
 <% end %>

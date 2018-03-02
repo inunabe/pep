@@ -27,3 +27,12 @@
 textarea.materialize-textarea {
   padding: 0;
 }
+
+// materializeとの競合防止
+.question_grade_regist [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  opacity: 1;
+  pointer-events: auto;
+}
+.question_grade_regist {
+  margin-bottom: 100px;
+}
