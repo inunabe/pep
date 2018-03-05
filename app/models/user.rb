@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
-  validates :email, uniqueness: true, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :name, uniqueness: true, presence: true
   validates :superior_id, numericality: true, allow_blank: true
   enum role: {
@@ -22,4 +23,5 @@ class User < ActiveRecord::Base
   has_many :answered_answer, class_name: 'Answer', foreign_key: :answered_user_id
 
   belongs_to :grade
+
 end
