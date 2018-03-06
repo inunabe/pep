@@ -1,6 +1,9 @@
   <div class="page-title">
     <h3>質問一覧</h3>
   </div>
+  <div class="actions right-align">
+  <%= link_to "質問登録", new_question_path, :class => "btn question-link waves-effect waves-light" %>
+  </div>
   <div class="contents row questions-table ">
     <table class="bordered">
     <!-- 表の頭の部分 -->
@@ -15,8 +18,19 @@
         <tbody>
         <% @questions.each do |question|%>
         <tr>
-        <td class="questionindex-text"><%= link_to "#{question.text}", edit_question_path(question)%></td>
-        <td><%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
+          <td class="questionindex-text">
+            <%= link_to "#{question.text}", edit_question_path(question)%>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            ウェイト&nbsp;:&nbsp;<%=question.weight %>
+          </td>
+          <td><%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <% question.grades.each do |grade|%>
+              <%= grade.department.name %>&nbsp;-&nbsp;<%= grade.rank %>&nbsp;&nbsp;&nbsp;
+            <% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>

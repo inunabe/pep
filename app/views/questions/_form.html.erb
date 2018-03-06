@@ -22,18 +22,21 @@
       <%= f.select :weight,{"1": 1,"2": 2,"3": 3} %>
     </div>
   </div>
-  <%= f.fields_for :question_alternatives do |fb| %>
+
+  <!-- 選択肢登録部分 -->
+  <%= f.fields_for :question_alternatives do |alternatives_form| %>
     <div class="row">
       <div class="input-field col s8">
-        <%= fb.label :選択肢 %><br>
-        <%= fb.text_field :text, id: "question_alternative", class: "materialize-textarea" %>
+        <%= alternatives_form.label :選択肢 %><br>
+        <%= alternatives_form.text_field :text, id: "question_alternative", class: "materialize-textarea" %>
       </div>
       <div class="input-field col s4">
-        <%= fb.label :評価尺度 %><br>
-        <%= fb.select :rate,{"0": 0,"1": 1,"2": 2,"3": 3,"4": 4} %>
+        <%= alternatives_form.label :評価尺度 %><br>
+        <%= alternatives_form.select :rate,{"0": 0,"1": 1,"2": 2,"3": 3,"4":4} %>
       </div>
     </div>
   <% end %>
+    <!-- 選択肢登録部分ここまで -->
 
       <div class="question_grade_regist center-align">
         <div class="grade_head row">

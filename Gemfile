@@ -52,6 +52,7 @@ group :development, :production do
   gem 'material_icons'
   gem 'rails-i18n'
   gem 'banken'
+  gem 'deep_cloneable', '~> 2.3.0'
 end
 
 group :production do

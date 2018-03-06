@@ -28,9 +28,11 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    @question.update(question_params)
-
-    redirect_to questions_path, notice: "質問を編集しました"
+    if @question.update(update_question_params)
+      redirect_to questions_path, notice: "質問を編集しました"
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -44,7 +46,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:text,:weight,{question_alternatives_attributes: [:text,:rate]}, {grade_ids: []})
     # params.require(:モデル名).permit(:カラム名)
   end
-  # def grade_params
-  #   params.require(:grade).permit({grade_ids:[]})
-  # end
+  def update_question_params
+    params.require(:question).permit(:text,:weight,{question_alternatives_attributes: [:text,:rate, :_destroy, :id]}, {grade_ids: []})
+  end
 end

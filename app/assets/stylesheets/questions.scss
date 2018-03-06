@@ -17,19 +17,21 @@
   height: 100%;
 }
 
-.bordered tbody .questionindex-text a{
-  color: #666666 ;
-  &:hover {
-  text-decoration: underline;
-  }
+.bordered tbody .questionindex-text {
+  font-weight: bold;
 }
 
 textarea.materialize-textarea {
   padding: 0;
 }
 
-// 部門登録画面
+// 一覧画面から登録画面へのリンク
+.question-link {
+  margin-bottom: 30px;
+  background-color: $primary-color;
+}
 
+// 部門登録画面
 // materializeとの競合防止
 .question_grade_regist [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
   opacity: 1;
@@ -43,6 +45,7 @@ textarea.materialize-textarea {
 .grade_head {
   font-size: 20px;
   border-bottom: 1px solid;
+  color: #666666;
 }
 .question_grade_regist {
   margin-bottom: 100px;
