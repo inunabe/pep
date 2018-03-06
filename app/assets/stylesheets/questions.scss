@@ -28,10 +28,21 @@ textarea.materialize-textarea {
   padding: 0;
 }
 
+// 部門登録画面
+
 // materializeとの競合防止
 .question_grade_regist [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
   opacity: 1;
   pointer-events: auto;
+}
+// 部門等級選択肢文字大きさ
+.question_grade_regist label {
+  font-size: 1.3rem;
+}
+
+.grade_head {
+  font-size: 20px;
+  border-bottom: 1px solid;
 }
 .question_grade_regist {
   margin-bottom: 100px;

@@ -2,45 +2,4 @@
   <h3>評価編集</h3>
 </div>
 
-<div class="contents row answer-table ">
-    <!-- テーブルここから -->
-  <%= form_for (@subordinate_answers_ids) do |f| %>
-    <table class="bordered highlight">
-          <% @questions.each_with_index do |question, i|%>
-            <tr>
-              <td class="question-bold question_id"></td><td colspan=3 class="question-bold"><%= question.text %></td><td></td>
-            </tr>
-            <tr>
-              <td>
-                <!-- カラム名、送る値、 -->
-                <%= f.radio_button 'rate', 0, name:"rate#{i}", id:"rate0_#{i}", class:"with-gap"%>
-                <label for="rate0_<%= i %>"><%= question.question_alternatives.find_by(rate: 0).text %></label>
-              </td>
-              <td>
-                <%= f.radio_button 'rate', 1, name:"rate#{i}", id:"rate1_#{i}", class:"with-gap"%>
-                <label for="rate1_<%= i %>"><%= question.question_alternatives.find_by(rate: 1).text %></label>
-              </td>
-              <td>
-                <%= f.radio_button 'rate', 2, name:"rate#{i}", id:"rate2_#{i}", class:"with-gap"%>
-                <label for="rate2_<%= i %>"><%= question.question_alternatives.find_by(rate: 2).text %></label>
-              </td>
-              <td>
-                <%= f.radio_button 'rate', 3, name:"rate#{i}", id:"rate3_#{i}", class:"with-gap"%>
-                <label for="rate3_<%= i %>"><%= question.question_alternatives.find_by(rate: 3).text %></label>
-              </td>
-              <td>
-                <%= f.radio_button 'rate', 4, name:"rate#{i}", id:"rate4_#{i}", class:"with-gap"%>
-                <label for="rate4_<%= i %>"><%= question.question_alternatives.find_by(rate: 4).text %></label>
-              </td>
-            </tr>
-          <% end %>
-    </table>
-    <!-- テーブルここまで -->
-        <div class="actions right-align">
-          <%= hidden_field_tag :answered_user_id, @user.id %>
-          <%= f.submit '回答', :class=>"btn btn-large btn-answer waves-effect waves-light" %>
-        </div>
-  <% end %>
-</div>
-
-
+<%= render 'form' %>

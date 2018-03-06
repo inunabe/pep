@@ -34,26 +34,37 @@
       </div>
     </div>
   <% end %>
-  <table class="question_grade_regist centered striped">
-    <thead>
-      <tr>
-          <th>部署名</th>
-          <th>等級</th>
-          <th>追加/除外</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= collection_check_boxes(:question, :grade_ids, Grade.all, :id, :rank) do |grade| %>
-        <%= grade.label do %>
-          <tr>
-            <td><%= grade.object.department.name %></td>
-            <td><%= grade.object.rank %></td>
-            <td><%= grade.check_box %></td>
-          </tr>
+
+      <div class="question_grade_regist center-align">
+        <div class="grade_head row">
+          <div class="col s3">
+            追加チェック
+          </div>
+          <div class="col s6">
+            部門名
+          </div>
+          <div class="col s3">
+            等級
+          </div>
+        </div>
+
+      <%= f.collection_check_boxes(:grade_ids, Grade.all, :id, :rank) do |graded| %>
+      <div class="row">
+        <%= graded.label(class: "question_grade_regist") do %>
+        <div class="col s3">
+          <%= graded.check_box(class: "question_grade_regist") %>
+        </div>
+        <div class="col s6">
+          <%= graded.object.department.name %>
+        </div>
+        <div class="col s3">
+          <%= graded.object.rank %>
+        </div>
         <% end %>
+      </div>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+
   <div class="actions right-align">
     <%= f.submit "登録" ,:class=>"btn btn-large btn-question waves-effect waves-light" %>
   </div>
