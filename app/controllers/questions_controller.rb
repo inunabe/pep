@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.order("id ASC")
   end
 
   def edit
