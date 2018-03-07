@@ -6,33 +6,26 @@
   </div>
   <div class="contents row questions-table ">
     <table class="bordered">
-    <!-- 表の頭の部分 -->
-      <thead >
-        <tr>
-        <!-- <td>id</td><td>質問項目</td> -->
-        </tr>
-        </thead>
-
-
-        <!-- 表の中身 -->
-        <tbody>
-        <% @questions.each do |question|%>
+      <tbody>
+      <% @questions.each do |question|%>
         <tr>
           <td class="questionindex-text">
             <%= link_to "#{question.text}", edit_question_path(question)%>
             &nbsp;&nbsp;&nbsp;&nbsp;
             ウェイト&nbsp;:&nbsp;<%=question.weight %>
           </td>
-          <td><%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <% question.grades.each do |grade|%>
-              <%= grade.department.name %>&nbsp;-&nbsp;<%= grade.rank %>&nbsp;&nbsp;&nbsp;
-            <% end %>
+          <td>
+            <%= link_to '消去', question_path(question), method: :delete, data: { confirm: '本当に消去しますか?' } %>
           </td>
         </tr>
-        <% end %>
+      <tr>
+        <td colspan="2">
+          <% question.grades.each do |grade|%>
+            <%= grade.department.name %>&nbsp;-&nbsp;<%= grade.rank %>&nbsp;&nbsp;&nbsp;
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
       </tbody>
     </table>
   </div>

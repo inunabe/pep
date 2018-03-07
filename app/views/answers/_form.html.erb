@@ -4,7 +4,9 @@
     <table class="bordered highlight">
           <% @questions.each_with_index do |question, i|%>
             <tr>
-              <td class="question-bold question_id"></td><td colspan=3 class="question-bold"><%= question.text %></td><td></td>
+              <td colspan=5 class="question-bold">
+                <%= "#{i + 1}" %> &nbsp; : &nbsp; <%= question.text %>
+              </td>
             </tr>
             <tr>
               <td>
@@ -17,7 +19,7 @@
                 <label for="rate1_<%= i %>"><%= question.question_alternatives.find_by(rate: 1).text %></label>
               </td>
               <td>
-                <%= f.radio_button 'rate', 2, :checked => "checked", name:"rate#{i}", id:"rate2_#{i}", class:"with-gap" %>
+                <%= f.radio_button 'rate', 2, name:"rate#{i}", id:"rate2_#{i}", class:"with-gap" %>
                 <label for="rate2_<%= i %>"><%= question.question_alternatives.find_by(rate: 2).text %></label>
               </td>
               <td>
