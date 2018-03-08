@@ -53,6 +53,7 @@ group :development, :production do
   gem 'rails-i18n'
   gem 'banken'
   gem 'deep_cloneable', '~> 2.3.0'
+  gem 'kaminari'
 end
 
 group :production do

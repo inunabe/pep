@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.order("id ASC")
+    @questions = Question.order("id ASC").page(params[:page]).per(15)
   end
 
   def edit
