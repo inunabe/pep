@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
   resources :answers, only:[:create,:update]
   get 'answers/new/:user_id' => 'answers#new'
-  get 'answers/self_new/:user_id' => 'answers#self_new'
+  # get 'answers/self_new/:user_id' => 'answers#self_new'
   get 'answers/edit/:user_id' => 'answers#edit'
 
 

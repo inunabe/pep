@@ -19,14 +19,14 @@
             <ul id="dropdown1" class="dropdown-content">
               <% if current_user && current_user.executive? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
-                  <li><%= link_to '自己評価', "/answers/self_new/#{current_user.id}" %></li>
+                  <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
                 <% if current_user.answered_answer.present? %>
                   <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
                 <% end %>
 
               <% elsif current_user && current_user.manager? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user) %></li>
-                  <li><%= link_to '自己評価', "/answers/self_new/#{current_user.id}" %></li>
+                  <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
                 <% if current_user.answered_answer.present? %>
                   <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
                 <% end %>
@@ -34,10 +34,10 @@
               <% elsif current_user && current_user.admin? %>
                 <li><%= link_to "質問一覧", questions_path %></li>
                 <li><%= link_to "評価閲覧", mypage_user_path(current_user)%></li>
-                <li><%= link_to '自己評価', "/answers/self_new/#{current_user.id}" %></li>
+                <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
 
               <% elsif current_user && current_user.nomal? %>
-                  <li><%= link_to '自己評価', "/answers/self_new/#{current_user.id}" %></li>
+                  <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
                 <% if current_user.answering_answers.present? %>
                   <li><%= link_to "評価閲覧", user_path(current_user)%></li>
                 <% end %>

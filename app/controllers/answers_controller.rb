@@ -4,14 +4,15 @@ class AnswersController < ApplicationController
     @questions = @user.grade.questions
     @answer = Answer.new
   end
-  def self_new
-    @questions = current_user.grade.questions
-    @answer = Answer.new
-    @user = User.find(params[:user_id])
-  end
+  # def self_new
+  #   @questions = current_user.grade.questions
+  #   @answer = Answer.new
+  #   @user = User.find(params[:user_id])
+  # end
 
   def create
-    questions = Question.all
+    user = User.find(params[:answered_user_id])
+    questions = user.grade.questions
     question_ids = questions.pluck(:id)
     rates = [params[:rate0],params[:rate1],params[:rate2],params[:rate3],params[:rate4],params[:rate5],params[:rate6],params[:rate7],params[:rate8],params[:rate9],params[:rate10],params[:rate11],params[:rate12],params[:rate13],params[:rate14]]
     question_ids_rates = question_ids.zip(rates)
