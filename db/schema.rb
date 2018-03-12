@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312064410) do
+ActiveRecord::Schema.define(version: 20180312072031) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "answering_user_id", limit: 4
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180312064410) do
 
   create_table "periods", force: :cascade do |t|
     t.string   "title",       limit: 255
-    t.date     "stard_date"
+    t.date     "start_date"
     t.date     "finish_date"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
