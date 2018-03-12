@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :answers, only:[:create,:update]
   get 'answers/new/:user_id' => 'answers#new'
   # get 'answers/self_new/:user_id' => 'answers#self_new'
-  get 'answers/edit/:user_id' => 'answers#edit'
+  get 'answers/edit/:answered_user_id/:answer_id' => 'answers#edit'
 
 
   get 'login' => 'user_sessions#new', :as => :login

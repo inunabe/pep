@@ -42,7 +42,6 @@
                   <li><%= link_to "評価閲覧", user_path(current_user)%></li>
                 <% end %>
               <% end %>
-
             </ul>
 
                 <a href="<%= users_path %>" class="brand-logo left-logo left-align">Fukuei</a>
@@ -76,8 +75,10 @@
         <%= yield %>
           </div>
       </div>
+        <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
       <footer class="page-footer">
         © 2018 Copyright K.yuki All Rights Reserved.
       </footer>
+        <% end %>
   </body>
 </html>

@@ -21,7 +21,7 @@
       <tr>
         <td colspan="2">
           <% question.grades.each do |grade|%>
-            <%= grade.department.name %>&nbsp;-&nbsp;<%= grade.rank %>&nbsp;&nbsp;&nbsp;
+            ・<%= grade.department.name %>&nbsp;<%= grade.rank %>&nbsp;等級&nbsp;&nbsp;&nbsp;
           <% end %>
         </td>
       </tr>

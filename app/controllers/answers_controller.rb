@@ -26,17 +26,21 @@ class AnswersController < ApplicationController
     end
   end
 
-  # def edit
-  #   @questions = Question.all
-  #   answers = Answer.where(answered_user_id: params[:user_id])
+  def edit
+    @user = User.find(params[:answered_user_id])
+    @answer = Answer.find(params[:answer_id])
+    @question = @answer.question
+  end
+  def update
+    user = User.find(params[:answered_user_id])
+    @answer = Answer.find(params[:id])
+    @answer.update(update_params)
+    redirect_to user_path(user),notice:"評価編集しました"
+  end
 
-  #   subordinate_answers_ids = []
-  #   answers.each do |answer|
-  #     subordinate_answers_ids << answer.id
-  #   end
-  #   @subordinate_answers_ids = subordinate_answers_ids
-    # @user = User.find(params[:user_id])
-    # @answer = Answer.new(answer_user_id: Answer.find(answer_user.id))
-  # end
+  private
+  def update_params
+    params.permit(:rate)
+  end
 
 end

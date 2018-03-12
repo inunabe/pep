@@ -25,7 +25,11 @@
         <tr class="question_alternative-text">
             <% question_alternative = QuestionAlternative.find_by(question_id: self_answer.question_id,rate: self_answer.rate)%>
           <td colspan="2">
-            <%= question_alternative.text %>
+            <% if current_user.id == @user.id %>
+              <%= link_to "#{question_alternative.text}","/answers/edit/#{@user.id}/#{self_answer.id}" %>
+            <% else %>
+              <%= question_alternative.text %>
+            <% end %>
           </td>
         </tr>
           <% rate_weight = self_answer.rate * self_answer.question.weight%>
