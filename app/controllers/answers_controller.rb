@@ -4,11 +4,12 @@ class AnswersController < ApplicationController
     @questions = @user.grade.questions
     @answer = Answer.new
   end
-  # def self_new
-  #   @questions = current_user.grade.questions
-  #   @answer = Answer.new
-  #   @user = User.find(params[:user_id])
-  # end
+  def select_period
+    @answered_user = User.find(params[:answered_user_id])
+    if current_user.executive?
+      @answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @answered_user.id)
+    end
+  end
 
   def create
     user = User.find(params[:answered_user_id])

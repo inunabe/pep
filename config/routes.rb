@@ -15,12 +15,10 @@ Rails.application.routes.draw do
   end
   resources :answers, only:[:create,:update]
   get 'answers/new/:user_id' => 'answers#new'
-  # get 'answers/self_new/:user_id' => 'answers#self_new'
+  get 'answers/:answered_user_id/select_period' => 'answers#select_period'
   get 'answers/edit/:answered_user_id/:answer_id' => 'answers#edit'
-
 
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする
   post 'logout' => 'user_sessions#destroy', :as => :logout
-
 end

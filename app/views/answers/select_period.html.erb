@@ -1,0 +1,13 @@
+<div class="page-title">
+  <h3>評価時期を選択してね♡</h3>
+</div>
+  <div class="select_period">
+    <%= form_tag("/answers/new/#{params[:answered_user_id]}",{:method=>"get"}) do %>
+      <%= select_tag 'pereod[title]', options_from_collection_for_select(Period.all, :id, :title), { :prompt => "期を選択してください" }%>
+    <div class="actions">
+      <div class="register right-align">
+        <%= submit_tag "選択", class: "btn btn-large btn-register waves-effect waves-light"%>
+      </div>
+    </div>
+    <% end %>
+  </div>

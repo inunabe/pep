@@ -10,11 +10,9 @@
         <tr>
           <td class="user-name"><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
-        <% unless subordinate.answered_answer.present?%>
           <td><%= link_to '評価する', "/answers/new/#{subordinate.id}" %></td>
-        <% else %>
+          <td><%= link_to '評価♡', "/answers/#{subordinate.id}/select_period" %></td>
         <td><%= link_to "評価閲覧", user_path(subordinate)%></td>
-        <% end %>
       <% end %>
     </tbody>
   </table>
