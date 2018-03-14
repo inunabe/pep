@@ -1,15 +1,19 @@
-<div class="select_period">
-  <div class="row">
-    <div class="col s8">
-      <%= form_tag({controller: :answers, action: :switch_period},{:method=>"get"}) do %>
-        <%= label_tag :評価期選択 %><br>
-        <%= select_tag 'period[title]', options_from_collection_for_select(Period.all, :id, :title), { :prompt => "選択してください" } %>
-    </div>
-  </div>
-  <div class="actions">
-    <div class="register right-align">
-      <%= submit_tag "選択", class: "btn btn-register waves-effect waves-light"%>
-    </div>
-  </div>
-  <% end %>
+<div class="page-title">
+  <h3>評価期選択</h3>
 </div>
+<%= form_tag({controller: :answers, action: :switch_period},{:method=>"get"}) do %>
+  <div class="select_period">
+    <div class="row">
+      <div class="input-field col s12">
+          <i class="material-icons prefix">date_range</i>
+          <%= label_tag :評価期選択（必須）%><br>
+          <%= select_tag 'period[title]', options_from_collection_for_select(Period.all, :id, :title), { :prompt => "選択してください" }%>
+      </div>
+    </div>
+        <div class="actions">
+          <div class="register right-align">
+            <%= submit_tag "選択", class: "btn btn-large btn-register waves-effect waves-light"%>
+          </div>
+        </div>
+  </div>
+<% end %>
