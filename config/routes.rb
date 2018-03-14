@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :answers, only:[:create,:update]
   get 'answers/new/:user_id' => 'answers#new'
   get 'answers/:answered_user_id/select_period' => 'answers#select_period'
+  get 'answers/:answered_user_id/switch_period' => 'answers#switch_period'
   get 'answers/edit/:answered_user_id/:answer_id' => 'answers#edit'
 
   get 'login' => 'user_sessions#new', :as => :login

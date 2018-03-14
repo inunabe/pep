@@ -5,10 +5,17 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
   def select_period
-    @answered_user = User.find(params[:answered_user_id])
-    if current_user.executive?
-      @answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @answered_user.id)
-    end
+    # @answered_user = User.find(params[:answered_user_id])
+    # if current_user.executive?
+    #   @answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @answered_user.id)
+    # end
+  end
+  def switch_period
+    @user = User.find(params[:answered_user_id])
+    @questions = @user.grade.questions
+    @answer = Answer.new
+    # redirect_to "/answers/new/#{params[:answered_user_id]}", method: 'get'
+    render :new
   end
 
   def create
@@ -25,6 +32,7 @@ class AnswersController < ApplicationController
     else
       redirect_to users_path,notice:"回答しました"
     end
+    binding.pry
   end
 
   def edit
