@@ -12,11 +12,17 @@ class AnswersController < ApplicationController
   end
   def switch_period
     @user = User.find(params[:answered_user_id])
+    @period_id = params[:period][:title]
+    # answerテーブルから今ログイン中の上司が部下へ下した該当期のanswerを絞り出す
+    @this_period_answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @user.id, period_id: @period_id)
+    if @this_period_answer.present?
+      redirect_to "/users/#{@user.id}"
+    else
     @questions = @user.grade.questions
     @answer = Answer.new
-    @period_id = params[:period][:title]
     # redirect_to "/answers/new/#{params[:answered_user_id]}", method: 'get'
     render :new
+    end
   end
 
   def create
