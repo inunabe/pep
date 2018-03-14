@@ -3,7 +3,7 @@
 </div>
   <div class="select_period">
     <%= form_tag({controller: :answers, action: :switch_period},{:method=>"get"}) do %>
-      <%= select_tag 'pereod[title]', options_from_collection_for_select(Period.all, :id, :title), { :prompt => "期を選択してください" }%>
+      <%= select_tag 'period[title]', options_from_collection_for_select(Period.all, :id, :title), { :prompt => "期を選択してください" }%>
     <div class="actions">
       <div class="register right-align">
         <%= submit_tag "選択", class: "btn btn-large btn-register waves-effect waves-light"%>
