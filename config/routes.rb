@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get 'mypage'
       get 'subordinate_index'
     end
   end
+  get 'users/:user_id/mypage/:period_id' => 'users#mypage'
 
   resources :user_sessions
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :question_alternatives, only:[:new,:create,:edit,:update]
   end
   resources :answers, only:[:create,:update]
-  get 'answers/new/:user_id' => 'answers#new'
+  get 'answers/new/:user_id/:period_id' => 'answers#new'
   get 'answers/:answered_user_id/select_period' => 'answers#select_period'
   get 'answers/:answered_user_id/switch_period' => 'answers#switch_period'
   get 'answers/edit/:answered_user_id/:answer_id' => 'answers#edit'

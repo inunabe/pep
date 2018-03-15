@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :name, uniqueness: true, presence: true
   validates :superior_id, numericality: true, allow_blank: true
   enum role: {
-    nomal: 0,  #係長まで
+    normal: 0,  #係長まで
     manager: 1,  #課長・次長
     executive: 2,  #部長・支店長・工場長
     admin: 3  #管理者

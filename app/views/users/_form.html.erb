@@ -41,14 +41,19 @@
     </div>
   </div>
   <div class="row">
+    <% if current_user.admin? %>
   <!-- セレクトボックス(role登録) -->
     <div class="input-field col s4">
       <i class="material-icons prefix">folder</i>
       <%= f.label :区分 %><br>
-      <%= f.select :role,{"一般":"nomal","課長/次長":"manager","部長":"executive","管理者":"admin"} %>
+      <%= f.select :role,{"一般":"normal","課長/次長":"manager","部長":"executive","管理者":"admin"} %>
     </div>
+    <% end %>
       <!-- セレクトボックス(上長登録) -->
     <div class="input-field col s4">
+      <% unless current_user.admin? %>
+      <i class="material-icons prefix">folder</i>
+      <% end %>
       <%= f.label :上長 %><br>
       <%=f.select :superior_id, @superiors.map{|t| [t.name, t.id]}, :include_blank => true %>
     </div>

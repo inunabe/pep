@@ -15,16 +15,12 @@
     <%= @user.grade.department.name %>
     <%= @user.grade.rank%> 等級 <br>
   <% end %>
-  <% if current_user.grade.present? && current_user.nomal? %>
+  <% if current_user.grade.present? && current_user.normal? %>
     <%= current_user.grade.department.name %>
     <%= current_user.grade.rank%> 等級<br>
   <% else %>
   <% end %>
-  <% if current_user.nomal? %>
-    <%= current_user.name %> さんの自己評価
-  <% elsif current_user.manager? || current_user.executive? || current_user.admin? %>
     <%= @user.name %> さんの自己評価
-  <% end%>
 </div>
 
   <table class="bordered highlight answer_table">
@@ -59,7 +55,7 @@
 
 
 <div class="superior-answer-table center-align">
-  <% if current_user.nomal? %>
+  <% if current_user.normal? %>
     <%= current_user.superior_user.name %> さんからの評価
   <% elsif current_user.manager?%>
     <%= current_user.name %> さんから<br>

@@ -4,6 +4,9 @@
   <div class="actions right-align">
   <%= link_to "質問登録", new_question_path, :class => "btn question-link waves-effect waves-light" %>
   </div>
+<ul class="pagination">
+  <%= paginate @questions, theme: 'rc_custom_theme' %>
+</ul>
   <div class="contents row questions-table ">
     <table class="bordered">
       <tbody>

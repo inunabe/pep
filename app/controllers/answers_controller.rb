@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
     @user = User.find(params[:user_id])
     @questions = @user.grade.questions
     @answer = Answer.new
+    @period_id = params[:period_id]
   end
   def select_period
     # @answered_user = User.find(params[:answered_user_id])
@@ -10,18 +11,27 @@ class AnswersController < ApplicationController
     #   @answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @answered_user.id)
     # end
   end
+
+  # 回答画面か閲覧画面か振り分けるアクション
   def switch_period
     @user = User.find(params[:answered_user_id])
     @period_id = params[:period][:title]
     # answerテーブルから今ログイン中の上司が部下へ下した該当期のanswerを絞り出す
     @this_period_answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @user.id, period_id: @period_id)
-    if @this_period_answer.present?
+    if current_user.executive? && @this_period_answer.present?
       redirect_to "/users/#{@user.id}"
+    elsif current_user.manager? && @this_period_answer.present?
+      redirect_to "/users/#{@user.id}"
+    elsif current_user.normal? && @this_period_answer.present?
+      redirect_to "/users/#{@user.id}"
+    elsif current_user.admin? && @this_period_answer.present?
+      redirect_to "/users/#{@user.id}"
+      # マイページへのパス
+      # redirect_to "users/#{current_user.id}/mypage/#{params[:piriod_id]}"
     else
-    @questions = @user.grade.questions
-    @answer = Answer.new
     # redirect_to "/answers/new/#{params[:answered_user_id]}", method: 'get'
-    render :new
+    # render :new
+    redirect_to "/answers/new/#{params[:answered_user_id]}/#{@period_id}"
     end
   end
 
@@ -57,5 +67,4 @@ class AnswersController < ApplicationController
   def update_params
     params.permit(:rate)
   end
-
 end

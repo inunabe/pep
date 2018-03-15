@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
-    if current_user.nomal?
+    redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id || current_user.id == @user.superior_user.id || current_user.admin?
+    if current_user.normal?
       @self_answers = current_user.answering_answers
       @answers = Answer.where(answering_user_id: current_user.superior_user.id)
     elsif current_user.manager?
@@ -33,8 +33,8 @@ class UsersController < ApplicationController
   def mypage
     @user = User.find(params[:id])
     redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id ||  current_user.id == @user.superior_user.id || current_user.admin?
-    @self_answers = Answer.where(answering_user_id: current_user.id,answered_user_id: current_user.id)
-    @answers = Answer.where(answering_user_id: current_user.superior_user.id,answered_user_id: current_user.id)
+    @self_answers = Answer.where(answering_user_id: current_user.id, answered_user_id: current_user.id, period_id: params[:period][:title])
+    @answers = Answer.where(answering_user_id: current_user.superior_user.id,answered_user_id: current_user.id, period_id: params[:period][:title])
   end
 
 # 部下一覧を表示させる
@@ -104,7 +104,9 @@ class UsersController < ApplicationController
       users = User.all
       managers = users.manager
       executives = users.executive
+      admins = users.admin
       managers.push(executives)
+      managers.push(admins)
       @superiors = managers.flatten
     end
     # Use callbacks to share common setup or constraints between actions.
