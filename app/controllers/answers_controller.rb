@@ -5,13 +5,9 @@ class AnswersController < ApplicationController
     @answer = Answer.new
     @period_id = params[:period_id]
   end
-  def select_period
-    # @answered_user = User.find(params[:answered_user_id])
-    # if current_user.executive?
-    #   @answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @answered_user.id)
-    # end
-  end
 
+  def select_period
+  end
   # 回答画面か閲覧画面か振り分けるアクション
   def switch_period
     @user = User.find(params[:answered_user_id])
@@ -25,13 +21,9 @@ class AnswersController < ApplicationController
     elsif current_user.normal? && @this_period_answer.present?
       redirect_to "/users/#{@user.id}"
     elsif current_user.admin? && @this_period_answer.present?
-      redirect_to "/users/#{@user.id}"
-      # マイページへのパス
-      # redirect_to "users/#{current_user.id}/mypage/#{params[:piriod_id]}"
+      redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
     else
-    # redirect_to "/answers/new/#{params[:answered_user_id]}", method: 'get'
-    # render :new
-    redirect_to "/answers/new/#{params[:answered_user_id]}/#{@period_id}"
+      redirect_to "/answers/new/#{params[:answered_user_id]}/#{@period_id}"
     end
   end
 

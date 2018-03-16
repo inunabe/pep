@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'subordinate_index'
     end
   end
-  get 'users/:user_id/mypage/:period_id' => 'users#mypage'
+  get 'users/:id/:period_id' => 'users#show'
 
   resources :user_sessions
 

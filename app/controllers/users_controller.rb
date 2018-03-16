@@ -14,19 +14,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id || current_user.id == @user.superior_user.id || current_user.admin?
     if current_user.normal?
-      @self_answers = current_user.answering_answers
-      @answers = Answer.where(answering_user_id: current_user.superior_user.id)
+      @self_answers = Answer.where(answering_user_id:current_user.id,answered_user_id: current_user.id, period_id: params[:period_id])
+      @answers = Answer.where(answering_user_id: current_user.superior_user.id, period_id: params[:period_id])
     elsif current_user.manager?
-      @self_answers = @user.answering_answers
-      @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id)
+      @self_answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id, period_id: params[:period_id])
+      @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id, period_id: params[:period_id])
     elsif current_user.executive?
-      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id)
-      @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id)
+      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id, period_id: params[:period_id])
+      @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id, period_id: params[:period_id])
     elsif current_user.admin?
-      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id)
-      @answers = Answer.where(answering_user_id: @user.superior_user.id,answered_user_id: @user.id)
-      @answered_user = User.find(params[:id])
-      @answering_user = @answered_user.superior_user
+      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id, period_id: params[:period_id])
+      @answers = Answer.where(answering_user_id: @user.superior_user.id,answered_user_id: @user.id, period_id: params[:period_id])
+      @answered_user = @user
+      @answering_user = @user.superior_user
     end
   end
 
