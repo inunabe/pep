@@ -1,3 +1,9 @@
+<div class="self-answer-table center-align">
+  <% period = Period.find(params[:period_id]) %>
+  <%= @user.name %>&nbsp;さん&thinsp;&thinsp;
+  <%= period.title %>
+
+</div>
 <div class="contents row answer-table ">
     <!-- テーブルここから -->
   <%= form_for (@answer) do |f| %>
