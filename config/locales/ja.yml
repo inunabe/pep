@@ -1,4 +1,7 @@
 ja:
+  views:
+    pagination:
+      truncate: "..."
   activerecord:
   models:
   attributes:
