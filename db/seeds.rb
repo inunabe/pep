@@ -1,6 +1,6 @@
 require "csv"
-question_alternatives_csv = CSV.readlines("db/question_alternatives.csv")
-question_alternatives_csv.shift
-question_alternatives_csv.each do |row|
-  QuestionAlternative.create(text: row[1],question_id: row[2],rate: row[5])
+periods_csv = CSV.readlines("db/periods.csv")
+periods_csv.shift
+periods_csv.each do |row|
+  Period.create(title: row[1],start_date: row[2],finish_date: row[3])
 end
