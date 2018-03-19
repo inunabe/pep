@@ -1,6 +1,6 @@
 require "csv"
-questions_csv = CSV.readlines("db/questions.csv")
-questions_csv.shift
-questions_csv.each do |row|
-  Question.create(text: row[1])
+question_alternatives_csv = CSV.readlines("db/question_alternatives.csv")
+question_alternatives_csv.shift
+question_alternatives_csv.each do |row|
+  QuestionAlternative.create(text: row[1],question_id: row[2],rate: row[5])
 end
