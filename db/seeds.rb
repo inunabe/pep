@@ -1,7 +1,6 @@
 require "csv"
-grades_csv = CSV.readlines("db/grades.csv")
-grades_csv.shift
-grades_csv.each do |row|
-  Grade.create(department_id: row[1],rank: row[2])
-
+questions_csv = CSV.readlines("db/questions.csv")
+questions_csv.shift
+questions_csv.each do |row|
+  Question.create(text: row[1])
 end
