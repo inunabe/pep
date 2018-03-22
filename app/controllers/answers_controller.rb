@@ -15,11 +15,11 @@ class AnswersController < ApplicationController
     # answerテーブルから今ログイン中の上司が部下へ下した該当期のanswerを絞り出す
     @this_period_answer = Answer.where(answering_user_id: current_user.id, answered_user_id: @user.id, period_id: @period_id)
     if current_user.executive? && @this_period_answer.present?
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
     elsif current_user.manager? && @this_period_answer.present?
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
     elsif current_user.normal? && @this_period_answer.present?
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
     elsif current_user.admin? && @this_period_answer.present?
       redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
     elsif current_user.admin? && current_user.id == @user.id && @this_period_answer.empty?
