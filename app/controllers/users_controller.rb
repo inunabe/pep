@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       @self_answers = Answer.where(answering_user_id:current_user.id,answered_user_id: current_user.id, period_id: params[:period_id])
       @answers = Answer.where(answering_user_id: current_user.superior_user.id, period_id: params[:period_id])
     elsif current_user.manager?
-      @self_answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id, period_id: params[:period_id])
+      @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id, period_id: params[:period_id])
       @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id, period_id: params[:period_id])
     elsif current_user.executive?
       @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id, period_id: params[:period_id])
