@@ -22,6 +22,8 @@ class AnswersController < ApplicationController
       redirect_to "/users/#{@user.id}"
     elsif current_user.admin? && @this_period_answer.present?
       redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
+    elsif current_user.admin? && @this_period_answer.empty?
+      redirect_to users_path, alert: "まだ回答されていません"
     else
       redirect_to "/answers/new/#{params[:answered_user_id]}/#{@period_id}"
     end
