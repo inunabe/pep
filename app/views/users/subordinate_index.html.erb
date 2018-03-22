@@ -10,7 +10,8 @@
         <tr>
           <td class="user-name"><%= subordinate.name %></td>
           <td><%= subordinate.email %></td>
-          <td><%= link_to '評価・閲覧', "/answers/#{subordinate.id}/select_period" %></td>
+          <td><%= link_to '評価', "/answers/#{subordinate.id}/select_period" %></td>
+          <td><%= link_to '閲覧', "users/#{subordinate.id}/" %></td>
       <% end %>
     </tbody>
   </table>

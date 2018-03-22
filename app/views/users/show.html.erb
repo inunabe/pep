@@ -3,25 +3,10 @@
 </div>
 
 <div class="self-answer-table center-align">
-  <% if @user.grade.present? && current_user.executive? %>
+  <% if @user.grade.present? && current_user.executive? || @user.grade.present? && current_user.manager? || @user.grade.present? && current_user.admin? || current_user.grade.present? && current_user.normal?%>
     <%= @self_answers[1].period.title %>&nbsp;&nbsp;
     <%= @user.grade.department.name %>
     <%= @user.grade.rank%> 等級 <br>
-  <% end %>
-  <% if @user.grade.present? && current_user.manager? %>
-    <%= @self_answers[1].period.title %>&nbsp;&nbsp;
-    <%= @user.grade.department.name %>
-    <%= @user.grade.rank%> 等級 <br>
-  <% end %>
-  <% if @user.grade.present? && current_user.admin? %>
-    <%= @self_answers[1].period.title %>&nbsp;&nbsp;
-    <%= @user.grade.department.name %>
-    <%= @user.grade.rank%> 等級 <br>
-  <% end %>
-  <% if current_user.grade.present? && current_user.normal? %>
-    <%= @self_answers[1].period.title %>&nbsp;&nbsp;
-    <%= current_user.grade.department.name %>
-    <%= current_user.grade.rank%> 等級<br>
   <% else %>
   <% end %>
   <% if current_user.normal? %>

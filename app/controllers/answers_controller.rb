@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
     @questions = @user.grade.questions
     @answer = Answer.new
     @period_id = params[:period_id]
+    @self_answers = Answer.where(answering_user_id: @user.id, answered_user_id: @user.id, period_id: @period_id)
   end
 
   def select_period
@@ -22,9 +23,7 @@ class AnswersController < ApplicationController
       redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
     elsif current_user.admin? && @this_period_answer.present?
       redirect_to "/users/#{@user.id}/#{params[:period][:title]}"
-    elsif current_user.admin? && current_user.id == @user.id && @this_period_answer.empty?
-      redirect_to "/answers/new/#{params[:answered_user_id]}/#{@period_id}"
-    elsif current_user.admin? && @this_period_answer.empty?
+    elsif current_user.admin? && current_user.id != @user.id && @this_period_answer.empty?
       redirect_to users_path, alert: "まだ回答されていません"
     else
       redirect_to "/answers/new/#{params[:answered_user_id]}/#{@period_id}"
