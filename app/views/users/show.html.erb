@@ -46,7 +46,7 @@
   </table>
 
 
-
+<% if current_user.executive? && current_user.id != @user.id || current_user.manager? && current_user.id != @user.id || current_user.admin? && current_user.id != @user.id %>
 <div class="superior-answer-table center-align">
   <% if current_user.normal? %>
     <%= current_user.superior_user.name %> さんからの評価
@@ -88,3 +88,5 @@
         </tr>
     </tbody>
   </table>
+<% else %>
+<% end %>

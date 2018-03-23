@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     redirect_to users_path, alert: 'アクセス権限がありません' unless current_user.id == @user.id || current_user.id == @user.superior_user.id || current_user.admin?
     if current_user.normal?
       @self_answers = Answer.where(answering_user_id:current_user.id,answered_user_id: current_user.id, period_id: params[:period_id])
-      @answers = Answer.where(answering_user_id: current_user.superior_user.id, period_id: params[:period_id])
+      @answers = Answer.where(answering_user_id: current_user.superior_user.id, answered_user_id: current_user.id, period_id: params[:period_id])
     elsif current_user.manager?
       @self_answers = Answer.where(answering_user_id: @user.id,answered_user_id: @user.id, period_id: params[:period_id])
       @answers = Answer.where(answering_user_id: current_user.id,answered_user_id: @user.id, period_id: params[:period_id])

@@ -32,7 +32,7 @@
                 <li><%= link_to '自己評価', "/answers/#{current_user.id}/select_period" %></li>
 
               <% elsif current_user && current_user.normal? %>
-                  <li><%= link_to '自己評価', "/answers/#{current_user.id}/select_period" %></li>
+                  <li><%= link_to '評価・閲覧', "/answers/#{current_user.id}/select_period" %></li>
                 <% if current_user.answering_answers.present? %>
                 <% end %>
               <% end %>

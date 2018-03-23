@@ -37,9 +37,16 @@
 <div class="self-answer-table center-align">
   <%= @user.name %> さんへの評価
 </div>
+
 <%= render 'form' %>
 
 <% else %>
+
+<div class="self-answer-table center-align">
+  <% period = Period.find(params[:period_id]) %>
+  <%= period.title %> <br>
+  <%= @user.name %>&nbsp;さんの自己評価
+</div>
 
 <%= render 'form' %>
 
