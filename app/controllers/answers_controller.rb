@@ -51,13 +51,14 @@ class AnswersController < ApplicationController
   def edit
     @user = User.find(params[:answered_user_id])
     @answer = Answer.find(params[:answer_id])
+    @period_id = params[:period_id]
     @question = @answer.question
   end
   def update
     user = User.find(params[:answered_user_id])
     @answer = Answer.find(params[:id])
     @answer.update(update_params)
-    redirect_to user_path(user),notice:"評価編集しました"
+    redirect_to "/users/#{user.id}/#{params[:period_id]}",notice:"評価編集しました"
   end
 
   private

@@ -32,8 +32,7 @@
                 <li><%= link_to '自己評価', "/answers/#{current_user.id}/select_period" %></li>
 
               <% elsif current_user && current_user.normal? %>
-                  <li><%= link_to '自己評価', "/answers/new/#{current_user.id}" %></li>
-                  <li><%= link_to '評価', "/answers/#{current_user.id}/select_period" %></li>
+                  <li><%= link_to '自己評価', "/answers/#{current_user.id}/select_period" %></li>
                 <% if current_user.answering_answers.present? %>
                 <% end %>
               <% end %>
@@ -59,7 +58,7 @@
           <div class="container">
         <% end %>
         <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
-          <div class="flash_message center-align  z-depth-1">
+          <div class="flash_message center-align z-depth-1">
           <% if notice %>
             <p id="notice"><%= flash[:notice]%></p>
           <% elsif alert %>
