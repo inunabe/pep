@@ -29,6 +29,11 @@ textarea.materialize-textarea {
 .question-link {
   margin-bottom: 30px;
   background-color: $primary-color;
+  color: none;
+  &:hover{
+  background-color: $primary-color;
+  opacity: 0.8;
+ }
 }
 
 // 部門登録画面

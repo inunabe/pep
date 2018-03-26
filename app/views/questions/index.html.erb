@@ -2,7 +2,7 @@
     <h3>質問一覧</h3>
   </div>
   <div class="actions right-align">
-  <%= link_to "質問登録", new_question_path, :class => "btn question-link waves-effect waves-light" %>
+  <a href="/questions/new" class="btn question-link waves-effect waves-light"><i class="material-icons">add</i></a>
   </div>
 <ul class="pagination">
   <%= paginate @questions, theme: 'rc_custom_theme' %>
