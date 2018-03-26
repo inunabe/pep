@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312072031) do
+ActiveRecord::Schema.define(version: 20180326025116) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "answering_user_id", limit: 4
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 20180312072031) do
     t.integer  "rank",          limit: 4, default: 1
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+  end
+
+  create_table "performances", force: :cascade do |t|
+    t.string   "item",       limit: 255
+    t.integer  "weight",     limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "periods", force: :cascade do |t|
