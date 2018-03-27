@@ -1,0 +1,29 @@
+<div class="page-title">
+  <h3>業績評価項目一覧</h3>
+</div>
+<div class="actions right-align">
+  <%= link_to "業績評価", new_performance_path ,{ :class => "btn question-link waves-effect waves-light" } %>
+</div>
+<div class="contents row questions-table ">
+    <table class="bordered">
+      <tbody>
+      <% @performances.each do |performance|%>
+        <tr>
+          <td class="questionindex-text">
+            <%= link_to "#{performance.item}", edit_performance_path(performance)%>
+          </td>
+          <td>
+            ウェイト&nbsp;:&nbsp;<%=performance.weight %>
+          </td>
+          <td>
+            <%= performance.grade.department.name%>
+            <%= performance.grade.rank %>等級
+          </td>
+          <td>
+            <%= link_to '消去', performance_path(performance), method: :delete, data: { confirm: '本当に消去しますか?' } %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>

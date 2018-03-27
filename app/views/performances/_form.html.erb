@@ -1,0 +1,21 @@
+<%= form_for (@performance) do |f| %>
+<div class=row>
+  <div class="input-field col s5">
+    <%= f.label :業績評価項目 %><br>
+    <%= f.text_area :item ,class: "materialize-textarea" %>
+  </div>
+  <div class="input-field col s3">
+    <%= f.label :ウェイト %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="input-field col s4">
+    <%= f.label :部署_等級 %><br>
+    <%= f.grouped_collection_select(:grade_id, Department.all, :grades, :name, :id, :rank, :prompt => "選択してください") %>
+    <!-- f.grouped_collection_select(プロパティ名, オブジェクトの配列, タグを取得するメソッド, タグのラベル, valueの項目, テキストの項目 [, オプション]) -->
+  </div>
+</div>
+<div class="actions right-align">
+  <%= f.submit "登録" ,:class=>"btn btn-question waves-effect waves-light" %>
+</div>
+<% end %>
+

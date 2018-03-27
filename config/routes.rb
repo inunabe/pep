@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'answers/:answered_user_id/select_period' => 'answers#select_period'
   get 'answers/:answered_user_id/switch_period' => 'answers#switch_period'
   get 'answers/edit/:answered_user_id/:answer_id/:period_id' => 'answers#edit'
+  resources :performances
 
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする
