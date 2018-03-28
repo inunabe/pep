@@ -1,27 +1,30 @@
-<div class="actions right-align">
-  <%= link_to "一覧へ戻る",performances_path,{ :class => "btn question-link waves-effect waves-light" } %>
-  <a href="/performances/new" class="btn question-link waves-effect waves-light"><i class="material-icons">add</i></a>
-</div>
-<div class="contents row questions-table ">
-    <table class="bordered highlight">
-      <tbody>
-      <% @performances.each do |performance|%>
-        <tr>
-          <td class="questionindex-text">
-            <%= link_to "#{performance.item}", edit_performance_path(performance)%>
-          </td>
-          <td>
-            ウェイト&nbsp;:&nbsp;<%=performance.weight %>
-          </td>
-          <td>
-            <%= performance.grade.department.name%>
-            <%= performance.grade.rank %>等級
-          </td>
-          <td>
-            <%= link_to '消去', performance_path(performance), method: :delete, data: { confirm: '本当に消去しますか?' } %>
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+<div class="divider"></div>
+<div class="form">
+  <div class="actions right-align">
+    <%= link_to "一覧へ戻る",performances_path,{ :class => "btn question-link waves-effect waves-light" } %>
+    <a href="/performances/new" class="btn question-link waves-effect waves-light"><i class="material-icons">add</i></a>
   </div>
+  <div class="contents row questions-table ">
+      <table class="bordered highlight">
+        <tbody>
+        <% @performances.each do |performance|%>
+          <tr>
+            <td class="questionindex-text">
+              <%= link_to "#{performance.item}", edit_performance_path(performance)%>
+            </td>
+            <td>
+              ウェイト&nbsp;:&nbsp;<%=performance.weight %>
+            </td>
+            <td>
+              <%= performance.grade.department.name%>
+              <%= performance.grade.rank %>等級
+            </td>
+            <td>
+              <%= link_to '消去', performance_path(performance), method: :delete, data: { confirm: '本当に消去しますか?' } %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>

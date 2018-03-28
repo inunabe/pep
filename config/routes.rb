@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'performances/department/ishinomaki' => 'performances#ishinomaki'
   get 'performances/department/takasago' => 'performances#takasago'
 
+  get 'performancerate/new' => 'performance_rates#new'
+
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする
   post 'logout' => 'user_sessions#destroy', :as => :logout
