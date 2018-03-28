@@ -8,6 +8,7 @@ body header nav {
   & .left-logo {
     left: 1%;
     transform: none;
+    height: 100%;
   }
 }
 
@@ -19,4 +20,8 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
   font-size: 30px;
   height: 64px;
   line-height: 64px;
+}
+.brand-logo img {
+  height: 100%;
+  transform: none;
 }
