@@ -15,7 +15,7 @@
       <header>
         <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
         <nav>
-          <div class="left-align">
+          <div class="nav-wrapper left-align">
             <ul id="dropdown1" class="dropdown-content">
               <% if current_user && current_user.executive? %>
                 <li><%= link_to "部下一覧", subordinate_index_user_path(current_user.id) %></li>
@@ -38,7 +38,7 @@
               <% end %>
             </ul>
 
-                <a href="<%= users_path %>" class="brand-logo left-logo left-align">Fukuei</a>
+                <a href="<%= users_path %>" class="brand-logo left-logo left-align"><img class="brand-logo" src="../../assets/fukuei_logo.png" alt="fukuei"></a>
 
               <ul class="right">
                 <% if current_user %>

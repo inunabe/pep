@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get 'answers/:answered_user_id/switch_period' => 'answers#switch_period'
   get 'answers/edit/:answered_user_id/:answer_id/:period_id' => 'answers#edit'
   resources :performances
+  get 'performances/department/jimu_senmon' => 'performances#jimu_senmon'
+  get 'performances/department/kita' => 'performances#kita'
+  get 'performances/department/tokyo' => 'performances#tokyo'
+  get 'performances/department/honsya' => 'performances#honsya'
+  get 'performances/department/shiryo' => 'performances#shiryo'
+  get 'performances/department/ishinomaki' => 'performances#ishinomaki'
+  get 'performances/department/takasago' => 'performances#takasago'
 
   get 'login' => 'user_sessions#new', :as => :login
   # ルート名をloginやlogoutにする

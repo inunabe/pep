@@ -1,11 +1,19 @@
 <div class="page-title">
-  <h3>業績評価項目一覧</h3>
+  <h3>業績評価一覧</h3>
 </div>
 <div class="actions right-align">
-  <%= link_to "業績評価", new_performance_path ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "高砂", 'performances/department/takasago' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "石巻", 'performances/department/ishinomaki' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "飼料", 'performances/department/shiryo' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "本社", 'performances/department/honsya' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "東京", 'performances/department/tokyo' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "北日本", 'performances/department/kita' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <%= link_to "事務・専門職", 'performances/department/jimu_senmon' ,{ :class => "btn question-link waves-effect waves-light" } %>
+  <a href="/performances/new" class="btn question-link waves-effect waves-light"><i class="material-icons">add</i></a>
+
 </div>
 <div class="contents row questions-table ">
-    <table class="bordered">
+    <table class="bordered highlight">
       <tbody>
       <% @performances.each do |performance|%>
         <tr>
