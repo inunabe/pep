@@ -14,3 +14,15 @@ function initMap() {
           map: map
         });
 }
+
+ // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+
+// Materialize.toast(message, displayLength, className, completeCallback);
+  Materialize.toast(message, duration) // 4000 is the duration of the toast
+// function showToast(message, duration) {
+//   Materialize.toast(message, duration,'rounded');
+// }
+  // $('#gyomu').fadeIn();

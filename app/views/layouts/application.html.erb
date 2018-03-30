@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fukuei-Personnel evaluation program-</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGjDT8Us6vibhEvOAz0HQg2K5WfDS1JRg"></script>
   </head>
@@ -38,7 +37,7 @@
               <% end %>
             </ul>
 
-                <a href="<%= users_path %>" class="brand-logo left-logo left-align"><img class="brand-logo" src="../../assets/fukuei_logo.png" alt="fukuei"></a>
+                <a href="<%= users_path %>" class="brand-logo left-logo left-align"><img class="brand-logo" src="../../../assets/fukuei_logo.png" alt="fukuei"></a>
 
               <ul class="right">
                 <% if current_user %>
@@ -74,5 +73,6 @@
         © 2018 Copyright K.yuki All Rights Reserved.
       </footer>
         <% end %>
+    <%= javascript_include_tag 'application'%>
   </body>
 </html>

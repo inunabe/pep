@@ -1,5 +1,63 @@
 <div class="divider"></div>
 <div class="form">
-
-
+  <%= form_for (@performance_rate) do |f| %>
+    <table class="bordered responsive-table">
+      <tbody>
+        <tr>
+          <td>
+            <%= f.radio_button 'rate', 0, id:"rate0",class:"with-gap"%>
+            <label for="rate0">85％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 10, id:"rate1",class:"with-gap"%>
+            <label for="rate1">85％以上88％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 20, id:"rate2",class:"with-gap"%>
+            <label for="rate2">88％以上91％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 30, id:"rate3",class:"with-gap"%>
+            <label for="rate3">91％以上94％未満</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.radio_button 'rate', 40, id:"rate4",class:"with-gap"%>
+            <label for="rate4">94％以上96％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 50, id:"rate5",class:"with-gap"%>
+            <label for="rate5">96％以上98％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 60, id:"rate6",class:"with-gap"%>
+            <label for="rate6">98％以上100％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 70, id:"rate7",class:"with-gap"%>
+            <label for="rate7">100%以上103％未満</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.radio_button 'rate', 80, id:"rate8",class:"with-gap"%>
+            <label for="rate8">103％以上106％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 90, id:"rate9",class:"with-gap"%>
+            <label for="rate9">106％以上110％未満</label>
+          </td>
+          <td>
+            <%= f.radio_button 'rate', 100, id:"rate10",class:"with-gap"%>
+            <label for="rate10">110％以上</label>
+          </td>
+          <td></td>
+        </tr>
+    </tbody>
+    </table>
+    <div class="actions right-align">
+      <%= f.submit '登録', :class=>"btn btn-answer waves-effect waves-light" %>
+    </div>
+  <% end %>
 </div>
