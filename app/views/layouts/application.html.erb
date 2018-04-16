@@ -7,12 +7,14 @@
     <title>Fukuei-Personnel evaluation program-</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGjDT8Us6vibhEvOAz0HQg2K5WfDS1JRg"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
+    <%= favicon_link_tag() %>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGjDT8Us6vibhEvOAz0HQg2K5WfDS1JRg"></script> -->
   </head>
 
   <body>
       <header>
-        <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
         <nav>
           <div class="nav-wrapper left-align">
             <ul id="dropdown1" class="dropdown-content">
@@ -50,7 +52,6 @@
               </ul>
           </div>
         </nav>
-        <% end %>
       </header>
       <div class="contents">
         <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
@@ -68,11 +69,9 @@
         <%= yield %>
           </div>
       </div>
-        <% unless controller.controller_name == "roots" && controller.action_name == "index" %>
-      <footer class="page-footer">
+<!--       <footer class="page-footer">
         © 2018 Copyright K.yuki All Rights Reserved.
-      </footer>
-        <% end %>
+      </footer> -->
     <%= javascript_include_tag 'application'%>
   </body>
 </html>

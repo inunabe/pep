@@ -1,4 +1,4 @@
-<div class="toppage">
+<!-- <div class="toppage">
   <div class="flash-root">
     <% if notice %>
     <p id="notice-root"><%= flash[:notice]%></p>
@@ -18,3 +18,23 @@
     <% end %>
   </div>
 </div>
+ -->
+
+  <div class="parallax-container" style="height:600px;">
+    <div class="parallax"><img src="https://images.pexels.com/photos/5865/healthy-spring-young-green-5865.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+    </div>
+  </div>
+    <div class="section blue-grey lighten-5">
+      <div class="row container">
+        <h2 class="header green-text text-darken-1 center-align" style="font-weight: 100" >Fukuei -Personnel evaluation program-</h2>
+        <h6 class="gray-text center-align" style="font-weight: 100">福栄肥料株式会社人事評価システム</h6>
+        <div class="center-align">
+          <%= link_to "ログインする",login_path ,remote: true,:id => "login-btn", :class => "waves-effect waves-light btn",:style => "background-color: #43a047;" "margin-top: 30px;"%>
+        </div>
+        <div id="login-modal" style="display:none;"></div>
+      </div>
+    </div>
+  <div class="parallax-container" style="height: 600px;">
+    <div class="parallax"><img src="https://images.pexels.com/photos/7095/people-coffee-notes-tea.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+    </div>
+  </div>

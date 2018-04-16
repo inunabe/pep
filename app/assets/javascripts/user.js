@@ -1,19 +1,21 @@
 $(document).ready(function() {
   $(".dropdown-button").dropdown();
   $('select').material_select();
-});
+  $('.parallax').parallax();
+  $('.modal').modal();
 
-function initMap() {
-        var uluru = {lat: 34.719735, lng: 135.418066};
-        var map = new google.maps.Map(document.getElementById('fukuei-map'), {
-          zoom: 17,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-}
+
+  function initMap() {
+          var uluru = {lat: 34.719735, lng: 135.418066};
+          var map = new google.maps.Map(document.getElementById('fukuei-map'), {
+            zoom: 17,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+  }
 
  // Initialize collapse button
   $(".button-collapse").sideNav();
@@ -25,4 +27,4 @@ function initMap() {
 // function showToast(message, duration) {
 //   Materialize.toast(message, duration,'rounded');
 // }
-  // $('#gyomu').fadeIn();
+});
